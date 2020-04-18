@@ -59,7 +59,7 @@ class GoogleSuggestions():
 				else:
 					if response.status == 200:
 						data = response.read()
-						exec data
+						exec(data)
 					else:
 						self.callback(None)
 			self.conn.close()
