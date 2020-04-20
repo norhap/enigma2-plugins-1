@@ -45,7 +45,7 @@ class CharDistributionAnalysis:
         
     def reset(self):
         """reset analyser, clear any state"""
-        self._mDone = constants.False # If this flag is set to constants.True, detection is done and conclusion has been made
+        self._mDone = False # If this flag is set to True, detection is done and conclusion has been made
         self._mTotalChars = 0 # Total characters encountered
         self._mFreqChars = 0 # The number of characters whose frequency order is less than 512
 

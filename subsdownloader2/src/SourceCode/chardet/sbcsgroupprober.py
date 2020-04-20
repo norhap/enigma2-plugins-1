@@ -56,8 +56,8 @@ class SBCSGroupProber(CharSetGroupProber):
             SingleByteCharSetProber(TIS620ThaiModel),
             ]
         hebrewProber = HebrewProber()
-        logicalHebrewProber = SingleByteCharSetProber(Win1255HebrewModel, constants.False, hebrewProber)
-        visualHebrewProber = SingleByteCharSetProber(Win1255HebrewModel, constants.True, hebrewProber)
+        logicalHebrewProber = SingleByteCharSetProber(Win1255HebrewModel, False, hebrewProber)
+        visualHebrewProber = SingleByteCharSetProber(Win1255HebrewModel, True, hebrewProber)
         hebrewProber.set_model_probers(logicalHebrewProber, visualHebrewProber)
         self._mProbers.extend([hebrewProber, logicalHebrewProber, visualHebrewProber])
 

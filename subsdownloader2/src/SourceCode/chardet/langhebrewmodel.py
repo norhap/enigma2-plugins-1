@@ -196,6 +196,6 @@ Win1255HebrewModel = { \
   'charToOrderMap': win1255_CharToOrderMap,
   'precedenceMatrix': HebrewLangModel,
   'mTypicalPositiveRatio': 0.984004,
-  'keepEnglishLetter': constants.False,
+  'keepEnglishLetter': False,
   'charsetName': "windows-1255"
 }

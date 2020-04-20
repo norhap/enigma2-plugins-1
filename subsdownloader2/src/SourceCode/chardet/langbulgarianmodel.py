@@ -215,7 +215,7 @@ Latin5BulgarianModel = { \
   'charToOrderMap': Latin5_BulgarianCharToOrderMap,
   'precedenceMatrix': BulgarianLangModel,
   'mTypicalPositiveRatio': 0.969392,
-  'keepEnglishLetter': constants.False,
+  'keepEnglishLetter': False,
   'charsetName': "ISO-8859-5"
 }
 
@@ -223,6 +223,6 @@ Win1251BulgarianModel = { \
   'charToOrderMap': win1251BulgarianCharToOrderMap,
   'precedenceMatrix': BulgarianLangModel,
   'mTypicalPositiveRatio': 0.969392,
-  'keepEnglishLetter': constants.False,
+  'keepEnglishLetter': False,
   'charsetName': "windows-1251"
 }

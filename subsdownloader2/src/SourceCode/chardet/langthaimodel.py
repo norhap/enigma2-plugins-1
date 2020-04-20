@@ -195,6 +195,6 @@ TIS620ThaiModel = { \
   'charToOrderMap': TIS620CharToOrderMap,
   'precedenceMatrix': ThaiLangModel,
   'mTypicalPositiveRatio': 0.926386,
-  'keepEnglishLetter': constants.False,
+  'keepEnglishLetter': False,
   'charsetName': "TIS-620"
 }

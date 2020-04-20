@@ -212,7 +212,7 @@ Latin2HungarianModel = { \
   'charToOrderMap': Latin2_HungarianCharToOrderMap,
   'precedenceMatrix': HungarianLangModel,
   'mTypicalPositiveRatio': 0.947368,
-  'keepEnglishLetter': constants.True,
+  'keepEnglishLetter': True,
   'charsetName': "ISO-8859-2"
 }
 
@@ -220,6 +220,6 @@ Win1250HungarianModel = { \
   'charToOrderMap': win1250HungarianCharToOrderMap,
   'precedenceMatrix': HungarianLangModel,
   'mTypicalPositiveRatio': 0.947368,
-  'keepEnglishLetter': constants.True,
+  'keepEnglishLetter': True,
   'charsetName': "windows-1250"
 }

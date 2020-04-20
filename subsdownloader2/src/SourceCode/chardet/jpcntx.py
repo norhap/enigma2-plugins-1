@@ -129,7 +129,7 @@ class JapaneseContextAnalysis:
         self._mRelSample = [0] * NUM_OF_CATEGORY # category counters, each interger counts sequence in its category
         self._mNeedToSkipCharNum = 0 # if last byte in current buffer is not the last byte of a character, we need to know how many bytes to skip in next buffer
         self._mLastCharOrder = -1 # The order of previous char
-        self._mDone = constants.False # If this flag is set to constants.True, detection is done and conclusion has been made
+        self._mDone = False # If this flag is set to True, detection is done and conclusion has been made
 
     def feed(self, aBuf, aLen):
         if self._mDone: return
@@ -151,7 +151,7 @@ class JapaneseContextAnalysis:
                 if (order != -1) and (self._mLastCharOrder != -1):
                     self._mTotalRel += 1
                     if self._mTotalRel > MAX_REL_THRESHOLD:
-                        self._mDone = constants.True
+                        self._mDone = True
                         break
                     self._mRelSample[jp2CharContext[self._mLastCharOrder][order]] += 1
                 self._mLastCharOrder = order
