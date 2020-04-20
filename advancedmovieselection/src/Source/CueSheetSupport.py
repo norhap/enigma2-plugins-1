@@ -409,7 +409,7 @@ class BludiscCutListSupport(CutListSupport):
             cue = CueSheet(self.currentService)
             cut_hd = cue.getCutList()
             update_cue = False
-            if cut_bd and (0L, 2) not in cut_hd and self.main_movie:
+            if cut_bd and (0, 2) not in cut_hd and self.main_movie:
                 for cut in cut_bd:
                     if cut not in cut_hd:
                         print('add cut:', cut)
