@@ -102,7 +102,7 @@ class vConvSmartInfo(Poll, Converter, object):
 						sensotN = sensors.getSensorName(id)
 						if sensotN == "undefined":
 							sensotN = "sensor-"+str(id)
-				Ret_Text = "max. Box-Temp:  " + str(maxtemp) + "°C / " + sensotN + "\n" + Ret_Text
+				Ret_Text = "max. Box-Temp:  " + str(maxtemp) + "Â°C / " + sensotN + "\n" + Ret_Text
 			except:
 				pass
 			return Ret_Text

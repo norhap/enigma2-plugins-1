@@ -63,7 +63,7 @@ class MSNWeather(Source):
 		if weathermsn.weatherData.weatherItems.has_key(skey):
 			item = weathermsn.weatherData.weatherItems[skey]
 			highTemp = item.high
-			return "%s°%s" % (highTemp, weathermsn.weatherData.degreetype)
+			return "%sÂ°%s" % (highTemp, weathermsn.weatherData.degreetype)
 		else:
 			return _("n/a")
 			
@@ -75,7 +75,7 @@ class MSNWeather(Source):
 		if weathermsn.weatherData.weatherItems.has_key(skey):
 			item = weathermsn.weatherData.weatherItems[skey]
 			lowTemp = item.low
-			return "%s°%s" % (lowTemp, weathermsn.weatherData.degreetype)
+			return "%sÂ°%s" % (lowTemp, weathermsn.weatherData.degreetype)
 		else:
 			return _("n/a")
 			
@@ -86,7 +86,7 @@ class MSNWeather(Source):
 		if weathermsn.weatherData.weatherItems.has_key(skey):
 			item = weathermsn.weatherData.weatherItems[skey]
 			highTemp = item.high
-			high =  "%s°%s" % (highTemp, weathermsn.weatherData.degreetype)
+			high =  "%sÂ°%s" % (highTemp, weathermsn.weatherData.degreetype)
 			low = self.getTemperature_Low(key)
 			return "%s - %s" % (high, low)
 		else:
@@ -108,7 +108,7 @@ class MSNWeather(Source):
 	def getTemperature_Current(self):
 		skey = "-1"
 		if weathermsn.weatherData.weatherItems.has_key(skey):
-			return "%s°%s" % (weathermsn.weatherData.weatherItems[skey].temperature, weathermsn.weatherData.degreetype)
+			return "%sÂ°%s" % (weathermsn.weatherData.weatherItems[skey].temperature, weathermsn.weatherData.degreetype)
 		else:
 			return _("n/a")
 			
