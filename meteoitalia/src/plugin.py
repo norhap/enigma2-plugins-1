@@ -63,8 +63,6 @@ class meteoitMain(Screen):
 		self["lab12"] = Label("")
 		self["lab13"] = Pixmap()
 		self["lab14"] = Label("")
-		
-		
 		self["actions"] = ActionMap(["WizardActions", "ColorActions"],
 		{
 			"red": self.key_red,
@@ -72,7 +70,6 @@ class meteoitMain(Screen):
 			"back": self.close,
 			"ok": self.close
 		})
-		
 		self.activityTimer = eTimer()
 		self.activityTimer.timeout.get().append(self.startConnection)
 		self.onShow.append(self.startShow)
@@ -93,47 +90,46 @@ class meteoitMain(Screen):
 		myurl = self.get_Url()
 		req = Request(myurl)
 		try:
-    			handler = urlopen(req)
+			handler = urlopen(req)
 		except HTTPError as e:
-    			maintext = "Error: connection failed !"
+			maintext = "Error: connection failed !"
 		except URLError as e:
-    			maintext = "Error: Page not available !"
+			maintext = "Error: Page not available !"
 		else:
 			xml_response = handler.read()
 			#xml_response = handler.read().decode('iso-8859-1').encode('utf-8')
 			xml_response = self.checkXmlSanity(xml_response)
-   			dom = minidom.parseString(xml_response)
-    			handler.close()
-			
+			dom = minidom.parseString(xml_response)
+			handler.close()
 			maintext = ""
 			tmptext = ""
 			if (dom):
 				weather_data = {}
-    				weather_dom = dom.getElementsByTagName('weather')[0]
-    				data_structure = { 
-        				'forecast_information': ('postal_code', 'current_date_time'),
-        				'current_conditions': ('condition','temp_c', 'humidity', 'wind_condition', 'icon')
-    				}
-    				for (tag, list_of_tags2) in data_structure.iteritems():
-        				tmp_conditions = {}
-       					for tag2 in list_of_tags2:
-            					try: 
-                					tmp_conditions[tag2] =  weather_dom.getElementsByTagName(tag)[0].getElementsByTagName(tag2)[0].getAttribute('data')
-            					except IndexError:
-                					pass
-        				weather_data[tag] = tmp_conditions
+				weather_dom = dom.getElementsByTagName('weather')[0]
+				data_structure = { 
+					'forecast_information': ('postal_code', 'current_date_time'),
+					'current_conditions': ('condition','temp_c', 'humidity', 'wind_condition', 'icon')
+				}
+				for (tag, list_of_tags2) in data_structure.iteritems():
+					tmp_conditions = {}
+					for tag2 in list_of_tags2:
+						try: 
+							tmp_conditions[tag2] =  weather_dom.getElementsByTagName(tag)[0].getElementsByTagName(tag2)[0].getAttribute('data')
+						except IndexError:
+							pass
+					weather_data[tag] = tmp_conditions
 
-    				forecast_conditions = ('day_of_week', 'low', 'high', 'icon', 'condition')
-    				forecasts = []
+				forecast_conditions = ('day_of_week', 'low', 'high', 'icon', 'condition')
+				forecasts = []
 
 				for forecast in dom.getElementsByTagName('forecast_conditions'):
-        				tmp_forecast = {}
-        				for tag in forecast_conditions:
-            					tmp_forecast[tag] = forecast.getElementsByTagName(tag)[0].getAttribute('data')
-        				forecasts.append(tmp_forecast)
+						tmp_forecast = {}
+						for tag in forecast_conditions:
+								tmp_forecast[tag] = forecast.getElementsByTagName(tag)[0].getAttribute('data')
+						forecasts.append(tmp_forecast)
 
-    				weather_data['forecasts'] = forecasts
-    				dom.unlink()
+				weather_data['forecasts'] = forecasts
+				dom.unlink()
 				
 				maintext = "Il tempo di oggi a " + str(weather_data['forecast_information']['postal_code'])
 				mytime =  str(weather_data['forecast_information']['current_date_time'])
@@ -186,7 +182,6 @@ class meteoitMain(Screen):
 		
 		
 		self["lab1"].setText(maintext)
-			
 
 
 
@@ -204,9 +199,8 @@ class meteoitMain(Screen):
 				content = handler.read()
 				fileout = open(localfile, "wb")
 				fileout.write(content)
-    				handler.close()
+				handler.close()
 				fileout.close()
-		
 		return localfile
 
 # Bad Google translations (uff.....)
@@ -232,7 +226,7 @@ class meteoitMain(Screen):
 		elif day.find('dom') != -1:
 			day = "Domenica"
 		return day
-			
+
 # Make text safe for xml parser (Google old xml format without the character set declaration)
 	def checkXmlSanity(self, content):
 		content = content.replace('à', 'a')
@@ -255,14 +249,14 @@ class meteoitMain(Screen):
 		url = url + url2
 		url = url.replace(' ', '%20')
 		return url
-		
+
 	def delTimer(self):
 		del self.activityTimer
 
 	def key_green(self):
 		box = self.session.open(MessageBox, METEOITALIA_ABOUT_TXT, MessageBox.TYPE_INFO)
 		box.setTitle(_("Informazioni"))
-		
+
 	def key_red(self):
 		self.session.openWithCallback(self.updateInfo, MeteoitSelectCity)
 

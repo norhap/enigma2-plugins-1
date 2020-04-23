@@ -236,7 +236,7 @@ class RemoteTimerSetup(Screen, ConfigListScreen):
 		self["HelpWindow"] = Pixmap()
 		self["HelpWindow"].hide()
 
- 		self["SetupActions"] = ActionMap(["SetupActions", "ColorActions"],
+		self["SetupActions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"ok": self.keySave,
 			"cancel": self.Exit,

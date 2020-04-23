@@ -163,41 +163,42 @@ class GenreParse(ContentHandler):
             self.isGenreList = False
 
 class GenreFeed:
-    def __init__(self, cache_ttl=3600, cache_dir = '/tmp/pyshout_cache'):
-        self.cache_ttl = cache_ttl
-        self.cache_file = cache_dir + '/genres.cache'
+	def __init__(self, cache_ttl=3600, cache_dir = '/tmp/pyshout_cache'):
+		self.cache_ttl = cache_ttl
+		self.cache_file = cache_dir + '/genres.cache'
 	self.genre_list = ['Sorry, failed to load', '...try again later', 'Rock', 'Pop', 'Alternative']
-    def fetch_genres(self):
-        """
-        Grabs genres and returns tuple of genres
-        """
-        self.genre_url = 'http://www.shoutcast.com/sbin/newxml.phtml'
-        self.urlhandler = FancyURLopener()
-        self.fd = self.urlhandler.open(self.genre_url)
-        self.genre = self.fd.read()
-        self.fd.close()
-        return self.genre
 
-    def parse_genres(self):
-        ct = None
-        if self.cache_ttl:
-            ct = cacheTime(self.cache_file)
-            try:
-                self.genre_list = load_cache(self.cache_file)
-            except:
-                ct = None
-        if not ct or (time.time() - ct) > self.cache_ttl:
-            if DEBUG == 1:
-                print('Getting fresh feed')
-            try:
-	        parseXML = GenreParse()
-	        self.genres = self.fetch_genres()
-	        parseString( self.genres, parseXML )
-	        self.genre_list = parseXML.genreList
-	        write_cache(self.cache_file, self.genre_list)
-	    except:
-	    	print("Failed to get genres from server, sorry.")
-        return self.genre_list
+	def fetch_genres(self):
+		"""
+		Grabs genres and returns tuple of genres
+		"""
+		self.genre_url = 'http://www.shoutcast.com/sbin/newxml.phtml'
+		self.urlhandler = FancyURLopener()
+		self.fd = self.urlhandler.open(self.genre_url)
+		self.genre = self.fd.read()
+		self.fd.close()
+		return self.genre
+
+	def parse_genres(self):
+		ct = None
+		if self.cache_ttl:
+			ct = cacheTime(self.cache_file)
+			try:
+				self.genre_list = load_cache(self.cache_file)
+			except:
+				ct = None
+		if not ct or (time.time() - ct) > self.cache_ttl:
+			if DEBUG == 1:
+				print('Getting fresh feed')
+			try:
+				parseXML = GenreParse()
+				self.genres = self.fetch_genres()
+				parseString( self.genres, parseXML )
+				self.genre_list = parseXML.genreList
+				write_cache(self.cache_file, self.genre_list)
+			except:
+				print("Failed to get genres from server, sorry.")
+		return self.genre_list
 
 class ShoutcastFeed:
     def __init__(self, genre, min_bitrate=128, cache_ttl=600, cache_dir='/tmp/pyshout_cache'):
@@ -226,14 +227,14 @@ class ShoutcastFeed:
         return self.stations
 
     def parse_stations(self):
-    	ct = None
-    	if self.cache_ttl:
+        ct = None
+        if self.cache_ttl:
             ct = cacheTime(self.cache_file)
         if ct:
             try:
                 self.station_list = load_cache(self.cache_file)
             except:
-            	print("Failed to load cache.")
+                print("Failed to load cache.")
         if not ct or (time.time() - ct) > self.cache_ttl:
             try:
                 parseXML = StationParser(self.min_bitrate)
@@ -242,5 +243,5 @@ class ShoutcastFeed:
                 self.station_list = parseXML.station_list
                 write_cache(self.cache_file, self.station_list)
             except:
-            	print("Failed to get a new station list, sorry.")
+                print("Failed to get a new station list, sorry.")
         return self.station_list

@@ -134,7 +134,7 @@ def filescan(**kwargs):
 
 def Plugins(**kwargs):
 	from Plugins.Plugin import PluginDescriptor
- 	return [
+	return [
 		PluginDescriptor(
 			name = "RSS Reader",
 			description = _("A simple to use RSS reader"),

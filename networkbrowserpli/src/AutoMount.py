@@ -21,7 +21,7 @@ def rm_rf(d): # only for removing the opkg stuff from /media/hdd subdirs
 				os.unlink(path)
 		os.rmdir(d)
 	except Exception as ex:
-	        print("AutoMount failed to remove", d, "Error:", ex)
+		print("AutoMount failed to remove", d, "Error:", ex)
 
 class AutoMount():
 	"""Manages Mounts declared in a XML-Document."""
@@ -149,9 +149,9 @@ class AutoMount():
 
 			# and add any passed
 			if username:
-			    options.append('username="%s"' % username)
+				options.append('username="%s"' % username)
 			if password:
-			    options.append('password="%s"' % password)
+				options.append('password="%s"' % password)
 
 			# default to utf8
 			if not [i for i in options if i.startswith('iocharset=')]:
@@ -313,11 +313,11 @@ class AutoMount():
 					self.automounts[data['sharename']]['isMounted'] = False
 				if os.path.exists(path):
 					if not os.path.ismount(path):
-					        try:
+						try:
 							os.rmdir(path)
 							harddiskmanager.removeMountedPartition(path)
 						except Exception as ex:
-						        print("Failed to remove", path, "Error:", ex)
+							print("Failed to remove", path, "Error:", ex)
 
 		if self.checkList:
 			# Go to next item in list...
@@ -347,7 +347,7 @@ class AutoMount():
 			print("[AutoMount.py] add symlink fails!", ex)
 		movie = os.path.join(hdd_dir, 'movie')
 		if not os.path.exists(movie):
-		        try:
+			try:
 				os.mkdir(movie)
 			except Exception as ex:
 				print("[AutoMount.py] Failed to create ", movie, "Error:", ex)
@@ -430,11 +430,11 @@ class AutoMount():
 		(path, callback ) = extra_args
 		if os.path.exists(path):
 			if not os.path.ismount(path):
-			        try:
+				try:
 					os.rmdir(path)
 					harddiskmanager.removeMountedPartition(path)
 				except Exception as ex:
-				        print("Failed to remove", path, "Error:", ex)
+					print("Failed to remove", path, "Error:", ex)
 		if self.removeConsole:
 			if len(self.removeConsole.appContainers) == 0:
 				if callback is not None:

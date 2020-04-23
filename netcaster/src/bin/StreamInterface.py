@@ -88,58 +88,58 @@ class StreamInterface:
 
 ###############################################################################
 class Stream:
-    isfavorite = False
-    def __init__(self,name,description,url,type="mp3"):
-        self.name = name
-        self.description = description
-        self.url = url
-        self.type=type
-    def getName(self):
-        return self.name
-    def getDescription(self):
-        return self.description
-    def setName(self,name):
-        self.name = name
-    def setDescription(self,description):
-        self.description = description
-    def setURL(self,url):
-        self.url = url
-    def getURL(self, callback):
-    	self.callback = callback
-        if self.type.lower() == "pls":
-        	self.getPLSContent()
-        else:
-            self.callback(self.url)
+	isfavorite = False
+	def __init__(self,name,description,url,type="mp3"):
+		self.name = name
+		self.description = description
+		self.url = url
+		self.type=type
+	def getName(self):
+		return self.name
+	def getDescription(self):
+		return self.description
+	def setName(self,name):
+		self.name = name
+	def setDescription(self,description):
+		self.description = description
+	def setURL(self,url):
+		self.url = url
+	def getURL(self, callback):
+		self.callback = callback
+		if self.type.lower() == "pls":
+			self.getPLSContent()
+		else:
+			self.callback(self.url)
 
-    def getPLSContent(self):
-        print("loading PLS of stream ",self.name,self.url)
-    	getPage(self.url).addCallback(self._gotPLSContent).addErrback(self._errorPLSContent)
+	def getPLSContent(self):
+		print("loading PLS of stream ",self.name,self.url)
+		getPage(self.url).addCallback(self._gotPLSContent).addErrback(self._errorPLSContent)
 
-    def _gotPLSContent(self, lines):
+	def _gotPLSContent(self, lines):
 		if lines.startswith("ICY "):
 			print("[NETcaster] PLS expected, but got ICY stream")
 			self.type = "mp3"
 			self.callback(self.url)
 		else:
 			for line in lines.split('\n'):
-			    if line.startswith("File"):
-			        url = line.split("=")[1].rstrip().strip()
-			        self.callback(url)
-			        break
-			    print("Skipping:", line)
+				if line.startswith("File"):
+					url = line.split("=")[1].rstrip().strip()
+					self.callback(url)
+					break
+				print("Skipping:", line)
 
-    def _errorPLSContent(self, data):
-        print("[NETcaster] _errorPLSContent", data)
-        print("[NETcaster] _errorPLSContent let's assume it's a stream")
-        self.type = "mp3"
-        self.callback(self.url)
+	def _errorPLSContent(self, data):
+		print("[NETcaster] _errorPLSContent", data)
+		print("[NETcaster] _errorPLSContent let's assume it's a stream")
+		self.type = "mp3"
+		self.callback(self.url)
 
-    def setFavorite(self,TrueFalse):
-        self.isfavorite = TrueFalse
-    def isFavorite(self):
-        return self.isfavorite
-    def setType(self,type):
-        self.type=type
-    def getType(self):
-        return self.type
+	def setFavorite(self,TrueFalse):
+		self.isfavorite = TrueFalse
+	def isFavorite(self):
+		return self.isfavorite
+	def setType(self,type):
+		self.type=type
+	def getType(self):
+		return self.type
 

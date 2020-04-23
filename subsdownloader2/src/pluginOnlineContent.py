@@ -22,14 +22,14 @@ Subtitle_Downloader_temp_dir = '/tmp/SubsDownloader_cache/'
 
 class IsNewVersionCheck(threading.Thread):
     def __init__(self, session):
-	self.session = session
+        self.session = session
         threading.Thread.__init__(self)
         self.__latest_version_info_url = "http://subs-downloader.googlecode.com/svn/current_version.txt"
         self.__installed_version_info_file = resolveFilename(SCOPE_PLUGINS, "Extensions/SubsDownloader2/about.nfo")
                 
     def run(self):
         error_detected = 0
-	latest_vestion_data = None
+        latest_vestion_data = None
         try:
             current_vestion_data = open(self.__installed_version_info_file, "r")
             current_verion = current_vestion_data.readline()
@@ -57,24 +57,24 @@ class IsNewVersionCheck(threading.Thread):
 
 
 class InstallDownloadableContent():
-    def __init__(self,session, url_to_download):
-	self.session = session
-	self.cmdList = []
-	for item in url_to_download:
-	    self.cmdList.append((OpkgComponent.CMD_INSTALL, { "package": item }))
-		
-    def __install__(self):
-	self.session.openWithCallback(self.__restartMessage__, Opkg, cmdList = self.cmdList)
-    
-    def __restartMessage__(self):
-	self.session.openWithCallback(self.__restartGUI__, MessageBox,_("Do You want to restart GUI to apply changes?"), MessageBox.TYPE_YESNO, default = False)
+	def __init__(self,session, url_to_download):
+		self.session = session
+		self.cmdList = []
+		for item in url_to_download:
+			self.cmdList.append((OpkgComponent.CMD_INSTALL, { "package": item }))
 
-    def __restartGUI__(self, callback = None):
-	if callback == True:
-	    quitMainloop(3)
-	elif callback == False:
-	    pass
-            
+	def __install__(self):
+		self.session.openWithCallback(self.__restartMessage__, Opkg, cmdList = self.cmdList)
+
+	def __restartMessage__(self):
+		self.session.openWithCallback(self.__restartGUI__, MessageBox,_("Do You want to restart GUI to apply changes?"), MessageBox.TYPE_YESNO, default = False)
+
+	def __restartGUI__(self, callback = None):
+		if callback == True:
+			quitMainloop(3)
+		elif callback == False:
+			pass
+
 
 class PluginIpkUpdate(Screen): #, IsNewVersionCheck):
 	skin = """
@@ -84,7 +84,7 @@ class PluginIpkUpdate(Screen): #, IsNewVersionCheck):
 	#def __init__(self, session, args = 0):
 	def __init__(self, session, new_version_url):
 		self.session = session
-	        self.new_wersion_url = new_version_url
+		self.new_wersion_url = new_version_url
 		list = []
 		#self.autoupdate = IsNewVersionCheck()
 		list.append((_("Install plugin"), "install"))
@@ -98,24 +98,23 @@ class PluginIpkUpdate(Screen): #, IsNewVersionCheck):
 			#"cancel": self.close(None)
 		}, -1)
 		#self.new_wersion_url = self.autoupdate.run()
-		
+
 	def go(self):
 		returnValue = self["myMenu"].l.getCurrentSelection()[1]
 		if returnValue is not None:
-			if returnValue is "install":			    
-			    if self.new_wersion_url != False:
-				self.libmediaInfoInstallation = InstallDownloadableContent(self.session, [self.new_wersion_url])
-				self.libmediaInfoInstallation.__install__()
-			    else:
-				self.session.openWithCallback(self.__close_screen__,MessageBox,_("There is problem with server connection. \n Please try again later."), MessageBox.TYPE_INFO)
+			if returnValue is "install":
+				if self.new_wersion_url != False:
+					self.libmediaInfoInstallation = InstallDownloadableContent(self.session, [self.new_wersion_url])
+					self.libmediaInfoInstallation.__install__()
+				else:
+					self.session.openWithCallback(self.__close_screen__,MessageBox,_("There is problem with server connection. \n Please try again later."), MessageBox.TYPE_INFO)
 			elif returnValue is "exit":
-			    self.__close_screen__()
-			    
-	                                  
+				self.__close_screen__()
+
 	def __close_screen__(self, callback= None):
-	    self.close(None)		
-		
-		
+		self.close(None)
+
+
 #def flagcounetr(CallBackFunction):
 #    flag = urllib.urlopen(flag_counter_url,)
 #    #Subtitle_Downloader_temp_dir = '/tmp/SubsDownloader_cache/' # Sprawdzac czy sciezka jest taka sama jak w plugin.py
@@ -126,40 +125,40 @@ class PluginIpkUpdate(Screen): #, IsNewVersionCheck):
 #    CallBackFunction
     
 class CommertialBannerDownload(threading.Thread):
-    def __init__(self):
-	threading.Thread.__init__(self)
-	      
-    def __download_picture_urls(self):
-	picture_links = []
-	try:
-	    URL_file = urllib.urlopen(URL_text_file)
-	    picture_links = URL_file.readlines()
-	    URL_file.close()
-	except:
-	    print("Failed to download picture URLS from online text file")
-	picture_URLS_dict = []
-	for x in picture_links:
-	    if x[0:3] == "\xef\xbb\xbf":
-		x = x[3:]
-		if x[-1:] == '\n':
-		    x = x[0:-1]
-	    picture_URLS_dict.append(x)
-	return picture_URLS_dict
+	def __init__(self):
+		threading.Thread.__init__(self)
 
-    def __download_pictures(self):
-	pictures_URLS = self.__download_picture_urls()
-	picture_counter = 0
-	for x in pictures_URLS:
-	    try:
-		flag = urllib.urlopen(x,)
-		picture_file = open((Subtitle_Downloader_temp_dir+"%s.png" % picture_counter), "wb")
-		picture_file.write(flag.read())
-		flag.close()
-		picture_file.close()
-		picture_counter = picture_counter+1
-	    except:
-		print("Failed to download picture no %i", picture_counter)
-	return True
-     
-    def run(self):
-	return self.__download_pictures()
+	def __download_picture_urls(self):
+		picture_links = []
+		try:
+			URL_file = urllib.urlopen(URL_text_file)
+			picture_links = URL_file.readlines()
+			URL_file.close()
+		except:
+			print("Failed to download picture URLS from online text file")
+		picture_URLS_dict = []
+		for x in picture_links:
+			if x[0:3] == "\xef\xbb\xbf":
+				x = x[3:]
+				if x[-1:] == '\n':
+					x = x[0:-1]
+			picture_URLS_dict.append(x)
+		return picture_URLS_dict
+
+	def __download_pictures(self):
+		pictures_URLS = self.__download_picture_urls()
+		picture_counter = 0
+		for x in pictures_URLS:
+			try:
+				flag = urllib.urlopen(x,)
+				picture_file = open((Subtitle_Downloader_temp_dir+"%s.png" % picture_counter), "wb")
+				picture_file.write(flag.read())
+				flag.close()
+				picture_file.close()
+				picture_counter = picture_counter+1
+			except:
+				print("Failed to download picture no %i", picture_counter)
+		return True
+
+	def run(self):
+		return self.__download_pictures()

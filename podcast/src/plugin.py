@@ -101,12 +101,12 @@ def encodeUrl(url):
 	return url
 
 def getText(nodelist):
-    	rc = []
+	rc = []
 	for node in nodelist:
-        	if node.nodeType == node.TEXT_NODE:
-                	rc.append(node.data)
+		if node.nodeType == node.TEXT_NODE:
+			rc.append(node.data)
 	return ''.join(rc)
-                                
+
 ###################################################
 
 class BufferThread():
@@ -374,9 +374,7 @@ class PodcastXML(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.close}, -1)
-		
 		self.languages = []
 		list = []
 		file = None
@@ -387,12 +385,12 @@ class PodcastXML(Screen):
 			fileName = configDir + "podcasts_local.xml"
 		else:
 			fileName = configDir + "podcasts.xml"
-				
+
 		try:
 			file = open(fileName)
 		except:
 			pass
-		
+
 		if file:
 			# check if file is just a proxy to an external XML
 			head = file.readline()
@@ -407,10 +405,9 @@ class PodcastXML(Screen):
 			else:
 				file.close
 				source = open(fileName)
-			
 			if source:
 				try:
-			 		xml = parse(source).getroot()
+					xml = parse(source).getroot()
 					for language in xml.findall("language"):
 						name = language.get("name") or None
 						name = name.encode("UTF-8") or name
@@ -420,7 +417,6 @@ class PodcastXML(Screen):
 				except:
 					pass
 				source.close()
-			
 		self["list"] = MenuList(list)
 
 	def ok(self):
@@ -437,7 +433,7 @@ class PodcastFeedly(Screen):
 		<screen position="center,center" size="420,360" title="%s" >
 			<widget name="list" position="0,0" size="420,350" scrollbarMode="showOnDemand" />
 		</screen>""" % _("Podcast")
-		
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -460,7 +456,6 @@ class PodcastFeedly(Screen):
 		if file:
 			# check if file is just a proxy to an external XML
 			head = file.readline()
-
 			try:
 				if head.startswith("http"):
 					file.close
@@ -470,7 +465,6 @@ class PodcastFeedly(Screen):
 					source = open(fileName)
 			except:
 				pass
-			
 			if source:	
 				dom = xmlparse(source)
 				for item in dom.getElementsByTagName("outline"):
@@ -478,14 +472,13 @@ class PodcastFeedly(Screen):
 						for podcast in item.getElementsByTagName("outline"):
 							list.append(str(podcast.getAttribute("title")))
 							self.urls.append(str(podcast.getAttribute("xmlUrl")))
-
 		self["list"] = MenuList(list)
 
-        def ok(self):
+	def ok(self):
 		if len(self.urls) > 0:
-                	cur = self.urls[self["list"].getSelectedIndex()]
-                        self.session.open(PodcastMovies, cur)
-                                                                        			
+			cur = self.urls[self["list"].getSelectedIndex()]
+			self.session.open(PodcastMovies, cur)
+
 ###################################################
 
 class LocationSelection(Screen):
@@ -501,9 +494,7 @@ class LocationSelection(Screen):
 
 	def __init__(self, session, dir="/"):
 		Screen.__init__(self, session)
-		
 		self["key_green"] = Label(_("Select"))
-		
 		try: self["filelist"] = FileList(dir, showDirectories=True, showFiles=False)
 		except: self["filelist"] = FileList("/", showDirectories, showFiles)
 		
@@ -513,9 +504,8 @@ class LocationSelection(Screen):
 				"cancel": self.exit,
 				"green": self.select
 			}, -1)
-		
 		self.onLayoutFinish.append(self.updateDirectoryName)
-		
+
 	def okClicked(self):
 		if self["filelist"].canDescent():
 			self["filelist"].descent()
@@ -554,14 +544,9 @@ class PodcastConfig(ConfigListScreen, Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		
 		self["key_green"] = Label(_("Save"))
-		
 		ConfigListScreen.__init__(self, [])
-			
-		
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"], {"green": self.save, "cancel": self.exit}, -1)
-		
 		self.onLayoutFinish.append(self.createConfig)
 
 	def createConfig(self):
@@ -605,23 +590,19 @@ class PodcastConfig(ConfigListScreen, Screen):
 class Podcast(Screen):
 	skin = """
 		<screen position="center,center" size="560,360" title="%s" >
-                	<ePixmap pixmap="buttons/red.png" position="0,0" size="140,40" transparent="1" alphatest="on" />
-                        <ePixmap pixmap="buttons/green.png" position="140,0" size="140,40" transparent="1" alphatest="on" />
-                        <ePixmap pixmap="buttons/yellow.png" position="280,0" size="140,40" transparent="1" alphatest="on" />
-                        <ePixmap pixmap="buttons/blue.png" position="420,0" size="140,40" transparent="1" alphatest="on" />
-                        <widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" valign="center" halign="center" backgroundColor="#1f771f" transparent="1" />
+			<ePixmap pixmap="buttons/red.png" position="0,0" size="140,40" transparent="1" alphatest="on" />
+			<ePixmap pixmap="buttons/green.png" position="140,0" size="140,40" transparent="1" alphatest="on" />
+			<ePixmap pixmap="buttons/yellow.png" position="280,0" size="140,40" transparent="1" alphatest="on" />
+			<ePixmap pixmap="buttons/blue.png" position="420,0" size="140,40" transparent="1" alphatest="on" />
+			<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" valign="center" halign="center" backgroundColor="#1f771f" transparent="1" />
 			<widget name="list" position="0,45" size="560,305" scrollbarMode="showOnDemand" />
 		</screen>""" % _("Podcast")
 
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		
 		self["key_blue"] = Label(_("Help"))
-		
 		self["actions"] = ActionMap(["ColorActions", "OkCancelActions"], {"ok": self.ok, "cancel": self.close, "blue": self.help}, -1)
-		
-
 		# Feedly removed until found a way to get a stable source URL
 		self["list"] = MenuList([
 			_("from xml"),
@@ -631,8 +612,8 @@ class Podcast(Screen):
 		cur = self["list"].getCurrent()
 		if cur == _("from xml"):
 			self.session.open(PodcastXML)
-                elif cur == _("Feedly OPML"):
-                        self.session.open(PodcastFeedly)
+		elif cur == _("Feedly OPML"):
+			self.session.open(PodcastFeedly)
 		else:
 			self.session.open(PodcastConfig)
 
