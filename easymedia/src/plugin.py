@@ -30,7 +30,7 @@ from Components.MenuList import MenuList
 from Components.Label import Label
 from Components.ConfigList import ConfigListScreen
 from Components.PluginComponent import plugins
-from Components.PluginList import *
+# FIXME from Components.PluginList import *
 from Components.Sources.StaticText import StaticText
 from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigSelection
 from Tools.Directories import fileExists, pathExists, resolveFilename, SCOPE_PLUGINS
@@ -506,7 +506,7 @@ def MPcallbackFunc(answer):
 			EMsession.open(MessageBox, text = _('DVDPlayer Plugin is not installed!'), type = MessageBox.TYPE_ERROR)
 	elif answer == "MYTUBE":
 		if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/MyTube/plugin.pyo")):
-			from Plugins.Extensions.MyTube.plugin import *
+			from Plugins.Extensions.MyTube.plugin import MyTubeMain # FIXME
 			MyTubeMain(EMsession)
 		else:
 			EMsession.open(MessageBox, text = _('MyTube Plugin is not installed!'), type = MessageBox.TYPE_ERROR)
@@ -524,7 +524,7 @@ def MPcallbackFunc(answer):
 			EMsession.open(MessageBox, text = _('ZDFmediathek Plugin is not installed!'), type = MessageBox.TYPE_ERROR)
 	elif answer == "VLC":
 		if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/VlcPlayer/plugin.pyo")):
-			from Plugins.Extensions.VlcPlayer.plugin import *
+			from Plugins.Extensions.VlcPlayer.plugin import main # FIXME
 			main(EMsession)
 		else:
 			EMsession.open(MessageBox, text = _('VLC Player is not installed!'), type = MessageBox.TYPE_ERROR)

@@ -786,7 +786,7 @@ class TunerStateBase(Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		from skin import *
+		# from skin import *
 		self.skin_path = resolveFilename(SCOPE_PLUGINS, "Extensions/InfoBarTunerState")
 		self.skinName = "TunerState"
 		
