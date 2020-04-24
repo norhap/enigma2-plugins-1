@@ -578,7 +578,7 @@ class MovieList(GUIComponent):
                     filename = os.path.splitext(serviceref.getPath())[0] + ".jpg"
                 else:
                     filename = serviceref.getPath() + ".jpg"
-                filesize = float(info.getInfoObject(serviceref, iServiceInformation.sFileSize) / (1024 * 1024))
+                filesize = float(info.getFileSize(serviceref) / (1024 * 1024))
                 prec_text = str(perc) + '%'
                 png = None
                 series_path = os.path.join(os.path.dirname(serviceref.getPath()), "series.jpg")

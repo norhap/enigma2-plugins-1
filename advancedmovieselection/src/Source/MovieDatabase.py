@@ -114,7 +114,7 @@ class MovieDatabase(dict, SortProvider):
         
     def addMovie(self, location, movie):
         self["db"][location]["movies"].append(movie)
-        size = movie.info.getInfoObject(movie.serviceref, iServiceInformation.sFileSize)
+        size = movie.info.getFileSize(movie.serviceref)
         self["db"][location]["dir_size"] += size
 
     def removeLocation(self, location):
@@ -134,7 +134,7 @@ class MovieDatabase(dict, SortProvider):
                 for index, movie_info in enumerate(item["movies"]):
                     if movie_info.serviceref.getPath() == file_name:
                         print("remove", str(index), item["movies"][index])
-                        size = movie_info.info.getInfoObject(movie_info.serviceref, iServiceInformation.sFileSize)
+                        size = movie_info.info.getFileSize(movie_info.serviceref)
                         self["db"][key]["dir_size"] -= size
                         del item["movies"][index]
                         break

@@ -46,7 +46,7 @@ class MovieInfo(Converter, object):
 				rec_ref_str = info.getInfoString(service, iServiceInformation.sServiceref)
 				return ServiceReference(rec_ref_str).getServiceName()
 			elif self.type == self.MOVIE_REC_FILESIZE:
-				filesize = info.getInfoObject(service, iServiceInformation.sFileSize)
+				filesize = info.getFileSize(service)
 				if filesize is not None:
 					return "%d MB" % (filesize / (1024*1024))
 		return ""

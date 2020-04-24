@@ -17,8 +17,8 @@ class ServiceTypes:
     idDVB = eServiceReference.idDVB
     idFile = eServiceReference.idFile
     idUser = eServiceReference.idUser
-    idDVD = 4369
-    idMP3 = 4097
+    idDVD = eServiceReference.idServiceDVD
+    idMP3 = eServiceReference.idServiceMP3
     idBD = 4
 
 
@@ -293,17 +293,14 @@ class Info:
         return
 
     def getInfoObject(self, serviceref, type):
-        if type == iServiceInformation.sFileSize:
-            try:
-                dvd = detectDVDStructure(serviceref.getPath() + '/')
-                if dvd:
-                    return getFolderSize(os.path.dirname(dvd))
-                return os.path.getsize(serviceref.getPath())
-            except Exception as e:
-                print(e)
-                return -1
-
-        return
+        try:
+            dvd = detectDVDStructure(serviceref.getPath() + '/')
+            if dvd:
+                return getFolderSize(os.path.dirname(dvd))
+            return os.path.getsize(serviceref.getPath())
+        except Exception as e:
+            print(e)
+            return -1
 
     def getServiceReference(self):
         return self.serviceInfo
