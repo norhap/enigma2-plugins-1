@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # for localized messages
-from __init__ import _
+from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
@@ -16,10 +16,10 @@ from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN, fileExists
 from os import path as os_path, fsync
 
-from MountView import AutoMountView
-from MountEdit import AutoMountEdit
-from AutoMount import iAutoMount, AutoMount
-from UserManager import UserManager
+from Plugins.SystemPlugins.NetworkBrowser.MountView import AutoMountView
+from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
+from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount, AutoMount
+from Plugins.SystemPlugins.NetworkBrowser.UserManager import UserManager
 
 class AutoMountManager(Screen):
 	skin = """

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # for localized messages
 from __future__ import print_function
-from __init__ import _
+from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
@@ -11,7 +11,7 @@ from Components.config import config, ConfigIP, NoSave, ConfigText, ConfigEnable
 from Components.ConfigList import ConfigListScreen
 from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap, NumberActionMap
-from AutoMount import iAutoMount, AutoMount
+from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount, AutoMount
 from Components.Sources.Boolean import Boolean
 
 # helper function to convert ips from a sring to a list of ints

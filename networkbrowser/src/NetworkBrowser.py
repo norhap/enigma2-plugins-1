@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # for localized messages
 from __future__ import print_function
-from __init__ import _
+from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from enigma import eTimer, getDesktop
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
@@ -23,12 +23,12 @@ from stat import ST_MTIME
 
 import subprocess
 
-import netscan
-import ipscan
-from MountManager import AutoMountManager
-from AutoMount import iAutoMount
-from MountEdit import AutoMountEdit
-from UserDialog import UserDialog
+from Plugins.SystemPlugins.NetworkBrowser import netscan
+from Plugins.SystemPlugins.NetworkBrowser import ipscan
+from Plugins.SystemPlugins.NetworkBrowser.MountManager import AutoMountManager
+from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
+from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
+from Plugins.SystemPlugins.NetworkBrowser.UserDialog import UserDialog
 
 def formatIp(ip):
 	if ip is None or len(ip) != 4:

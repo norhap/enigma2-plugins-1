@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # for localized messages
 from __future__ import print_function
-from __init__ import _
+from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from enigma import eTimer, getDesktop
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
@@ -15,11 +15,11 @@ from Components.config import getConfigListEntry, NoSave, config, ConfigIP
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Tools.LoadPixmap import LoadPixmap
-from MountManager import AutoMountManager
-from AutoMount import iAutoMount
-from MountEdit import AutoMountEdit
-from UserDialog import UserDialog
-import netscan
+from Plugins.SystemPlugins.NetworkBrowser.MountManager import AutoMountManager
+from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
+from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
+from Plugins.SystemPlugins.NetworkBrowser.UserDialog import UserDialog
+from Plugins.SystemPlugins.NetworkBrowser import netscan
 import pickle
 import os
 import stat
