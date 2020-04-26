@@ -13,13 +13,13 @@ from Components.Sources.StaticText import StaticText
 from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap, NumberActionMap
 from enigma import ePoint
-from cPickle import dump, load
+from pickle import dump, load
 from os import path as os_path, unlink, stat, mkdir
 from time import time
 from stat import ST_MTIME
 
 def write_cache(cache_file, cache_data):
-	#Does a cPickle dump
+	#Does a pickle dump
 	if not os_path.isdir( os_path.dirname(cache_file) ):
 		try:
 			mkdir( os_path.dirname(cache_file) )
@@ -42,7 +42,7 @@ def valid_cache(cache_file, cache_ttl):
 		return 1
 
 def load_cache(cache_file):
-	#Does a cPickle load
+	#Does a pickle load
 	fd = open(cache_file)
 	cache_data = load(fd)
 	fd.close()

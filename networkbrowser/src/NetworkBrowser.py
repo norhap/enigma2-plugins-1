@@ -16,7 +16,7 @@ from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.Console import Console
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN, fileExists
 from Tools.LoadPixmap import LoadPixmap
-from cPickle import dump, load
+from pickle import dump, load
 from os import path as os_path, stat, mkdir, remove
 from time import time
 from stat import ST_MTIME
@@ -36,7 +36,7 @@ def formatIp(ip):
 	return "%d.%d.%d.%d" % (ip[0], ip[1], ip[2], ip[3])
 
 def write_cache(cache_file, cache_data):
-	#Does a cPickle dump
+	#Does a pickle dump
 	if not os_path.isdir( os_path.dirname(cache_file) ):
 		try:
 			mkdir( os_path.dirname(cache_file) )
@@ -59,7 +59,7 @@ def valid_cache(cache_file, cache_ttl):
 		return 1
 
 def load_cache(cache_file):
-	#Does a cPickle load
+	#Does a pickle load
 	fd = open(cache_file)
 	cache_data = load(fd)
 	fd.close()
