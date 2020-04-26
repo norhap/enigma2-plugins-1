@@ -33,6 +33,8 @@
 #include "errors.h"
 #include "time_compat.h"
 
+extern "C" PyObject* PyInit_netscan(void);
+
 typedef struct {
 	char name[16];
 	char domain[80];

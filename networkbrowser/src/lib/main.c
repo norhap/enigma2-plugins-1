@@ -185,8 +185,20 @@ static PyMethodDef netscanmethods[] = {
 	{NULL, NULL}
 };
 
-void initnetscan(void)
-{
-	Py_InitModule("netscan", netscanmethods);
-}
+static struct PyModuleDef netscan_moduledef = {
+	PyModuleDef_HEAD_INIT,
+	"netscan",        /* m_name */
+	"netscan",        /* m_doc */
+	-1,               /* m_size */
+	netscanMethods,   /* m_methods */
+	NULL,             /* m_reload */
+	NULL,             /* m_traverse */
+	NULL,             /* m_clear */
+	NULL,             /* m_free */
+};
+
+PyObject* PyInit_netscan(void)
+ {
+	PyModule_Create(&netscan_moduledef);
+ }
 
