@@ -13,7 +13,7 @@ from ServiceReference import ServiceReference
 from Components.ParentalControl import parentalControl
 
 # Timer
-from EPGRefreshTimer import epgrefreshtimer, EPGRefreshTimerEntry, checkTimespan
+from Plugins.Extensions.EPGRefresh.EPGRefreshTimer import epgrefreshtimer, EPGRefreshTimerEntry, checkTimespan
 
 # To calculate next timer execution
 from time import time
@@ -28,9 +28,9 @@ from Tools.XMLTools import stringToXML
 from os import path as path
 
 # We want a list of unique services
-from EPGRefreshService import EPGRefreshService
+from Plugins.Extensions.EPGRefresh.EPGRefreshService import EPGRefreshService
 
-from OrderedSet import OrderedSet
+from Plugins.Extensions.EPGRefresh.OrderedSet import OrderedSet
 
 # Configuration
 from Components.config import config
@@ -42,9 +42,9 @@ from Tools.BoundFunction import boundFunction
 
 # ... II
 from . import _, ENDNOTIFICATIONID, NOTIFICATIONDOMAIN
-from MainPictureAdapter import MainPictureAdapter
-from PipAdapter import PipAdapter
-from RecordAdapter import RecordAdapter
+from Plugins.Extensions.EPGRefresh.MainPictureAdapter import MainPictureAdapter
+from Plugins.Extensions.EPGRefresh.PipAdapter import PipAdapter
+from Plugins.Extensions.EPGRefresh.RecordAdapter import RecordAdapter
 
 # Path to configuration
 CONFIG = "/etc/enigma2/epgrefresh.xml"

@@ -113,8 +113,8 @@ except Exception as e:
 	#print("[EPGRefresh] Error registering Notification-Domain:", e)
 	
 # Plugin
-from EPGRefresh import epgrefresh
-from EPGRefreshService import EPGRefreshService
+from Plugins.Extensions.EPGRefresh.EPGRefresh import epgrefresh
+from Plugins.Extensions.EPGRefresh.EPGRefreshService import EPGRefreshService
 
 # Plugins
 from Components.PluginComponent import plugins
