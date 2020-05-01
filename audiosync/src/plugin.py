@@ -4,8 +4,8 @@ from . import _
 from Components.config import config, ConfigSubsection, ConfigInteger, ConfigSubList
 from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
-import AC3main
-import AC3setup
+import Plugins.Extensions.AudioSync.AC3main
+import Plugins.Extensions.AudioSync.AC3setup
 
 config.plugins.AC3LipSync = ConfigSubsection()
 config.plugins.AC3LipSync.outerBounds = ConfigInteger(default = 1000, limits = (-10000,10000))

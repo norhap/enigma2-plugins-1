@@ -1,9 +1,9 @@
 # for localized messages
 from . import _
 
-from HelpableNumberActionMap import HelpableNumberActionMap
+from Plugins.Extensions.AudioSync.HelpableNumberActionMap import HelpableNumberActionMap
 from Components.config import config
-from __init__ import _
+from Plugins.Extensions.AudioSync.__init__ import _
 from enigma import ePoint, eTimer, getDesktop
 
 class MovableScreen():
