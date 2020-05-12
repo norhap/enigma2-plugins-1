@@ -1,6 +1,4 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import print_function
 # for localized messages
 from __init__ import _
 from Screens.Screen import Screen
@@ -25,7 +23,7 @@ def write_cache(cache_file, cache_data):
 		try:
 			mkdir( os_path.dirname(cache_file) )
 		except OSError:
-			print(os_path.dirname(cache_file), 'is a file')
+			print os_path.dirname(cache_file), 'is a file'
 	fd = open(cache_file, 'w')
 	dump(cache_data, fd, -1)
 	fd.close()
@@ -113,7 +111,7 @@ class UserDialog(Screen, ConfigListScreen):
 		self.password = None
 
 		if os_path.exists(self.cache_file):
-			print('Loading user cache from ',self.cache_file)
+			print 'Loading user cache from ',self.cache_file
 			try:
 				self.hostdata = load_cache(self.cache_file)
 				username = self.hostdata['username']

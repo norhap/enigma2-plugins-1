@@ -1,6 +1,4 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
-from __future__ import print_function
 # for localized messages
 from __init__ import _
 from Screens.Screen import Screen
@@ -264,7 +262,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			self.createSetup()
 
 	def KeyText(self):
-		print("Green Pressed")
+		print "Green Pressed"
 		if self["config"].getCurrent() == self.sharenameEntry:
 			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'sharename'), VirtualKeyBoard, title = (_("Enter share name:")), text = self.sharenameConfigEntry.value)
 		if self["config"].getCurrent() == self.sharedirEntry:
@@ -404,7 +402,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			self.applyConfigRef = self.session.openWithCallback(self.applyConfigfinishedCB, MessageBox, _("Please wait for activation of your network mount..."), type = MessageBox.TYPE_INFO, enable_input = False)
 			iAutoMount.automounts[self.sharenameConfigEntry.value] = data
 			iAutoMount.writeMountsConfig()
-			iAutoMount.getAutoMountPoints(self.applyConfigDataAvail, True)
+			iAutoMount.getAutoMountPoints(self.applyConfigDataAvail)
 		else:
 			self.close()
 
