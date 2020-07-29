@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
 #-----------------------
 # Name: cache_null.py
 # Python Library

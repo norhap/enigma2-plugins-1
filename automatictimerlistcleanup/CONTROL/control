@@ -1,3 +1,2 @@
 Description: Automatic Timerlist Cleanup Plugin
-Depends: enigma2
 Conflicts: enigma2-plugin-systemplugins-automaticcleanup

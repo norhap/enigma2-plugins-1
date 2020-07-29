@@ -99,21 +99,21 @@ try:
 	AUTOTIMER = True
 	# now we need a ChoiceBox to select between timer and autotimer on green button
 	from Screens.ChoiceBox import ChoiceBox
-except ImportError:
+except ImportError as e:
 	AUTOTIMER = False
 
 # check for IMDb support
 try:
 	from Plugins.Extensions.IMDb.plugin import IMDB
 	IMDB_INSTALLED = True
-except ImportError:
+except ImportError as e:
 	IMDB_INSTALLED = False
 
 # check for YTTrailer support
 try:
 	from Plugins.Extensions.YTTrailer.plugin import YTTrailerList
 	YTTRAILER_INSTALLED = True
-except ImportError:
+except ImportError as e:
 	YTTRAILER_INSTALLED = False
 	
 

@@ -208,7 +208,7 @@ class DownloadMovies(Screen):
                 self.picload.setPara((self["poster"].instance.size().width(), self["poster"].instance.size().height(), sc[0], sc[1], False, 1, "#ff000000"))
                 self.picload.startDecode(jpg_file)
             except Exception as e:
-                print(e)
+                print(str(e))
         
     def pageUp(self):
         self["description"].pageUp()

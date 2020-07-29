@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
 
 from tmdb_api import Configuration, searchMovie, searchMovieWithYear, \
                      searchPerson, searchStudio, searchList, searchCollection, \

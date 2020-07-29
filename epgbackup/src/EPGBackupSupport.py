@@ -17,6 +17,8 @@ from Tools.Directories import SCOPE_PLUGINS, resolveFilename
 import os
 import subprocess
 
+model = getBoxType()
+
 SH_EXEC_FILE = resolveFilename(SCOPE_PLUGINS, "Extensions/EPGBackup/EPGBackup.sh")
 SH_TMP_OUTPUT="/tmp/.EPGBackup.sh.output"
 BOOTCOUNTERFILE="/tmp/.EPGBackup.boot.counter"
@@ -303,8 +305,8 @@ class EPGBackupSupport:
 			debugOut("EPGBackup.sh execute with params %s %s" %(param1, param2))
 		else:
 			debugOut("OS-execute %s with params %s %s" %(sh_cmd, param1, param2))
-		debugOut("Device-Info: %s" %(getBoxType()))
-		if getBoxType() == "dm800":
+		debugOut("Device-Info: %s" %(model))
+		if model == "dm800":
 			return self._executeShOld(sh_cmd = sh_cmd, param1 = param1, param2 = param2)
 		else:
 			return self._executeSh(sh_cmd = sh_cmd, param1 = param1, param2 = param2)

@@ -33,17 +33,10 @@ DESCRIPTION = _("SeriesPlugin")
 SHOWINFO = _("Show series info (SP)")
 RENAMESERIES = _("Rename serie(s) (SP)")
 CHECKTIMERS = _("Check timer list for series (SP)")
-SUPPORT = "http://bit.ly/seriespluginihad"
-DONATE = "http://bit.ly/seriespluginpaypal"
 TERMS = "http://www.serienserver.de"
 ABOUT = "\n  " + NAME + " " + VERSION + "\n\n" \
 				+ _("  (C) 2012 by betonme @ IHAD \n\n") \
-				+ _("  Terms: ") + TERMS + "\n\n" \
-				+ _("  {lookups:d} successful lookups.\n") \
-				+ _("  How much time have You saved?\n\n") \
-				+ _("  Support: ") + SUPPORT + "\n" \
-				+ _("  Feel free to donate. \n") \
-				+ _("  PayPal: ") + DONATE
+				+ _("  Terms: ") + TERMS
 
 USER_AGENT = "Enigma2-"+NAME
 

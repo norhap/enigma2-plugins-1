@@ -27,15 +27,15 @@ PNG_PATH = resolveFilename(SCOPE_PLUGINS)+"/Extensions/ORFat/"
 
 try:
 	from LT.LTStreamPlayer import streamplayer
-except ImportError:
+except ImportError as e:
 	try:
 		from Plugins.Extensions.LTMediaCenter.LTStreamPlayer import streamplayer
-	except ImportError:
+	except ImportError as e:
 		streamplayer = None
 
 try:
 	from Plugins.Extensions.VlcPlayer.VlcServerConfig import vlcServerConfig
-except ImportError:
+except ImportError as e:
 	vlcServerConfig = None
 
 ##########################################################

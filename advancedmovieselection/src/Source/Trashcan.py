@@ -57,7 +57,7 @@ class AsynchTrash(Thread):
             try:
                 Trashcan.delete(service.getPath(), self.min_age)
             except Exception as e:
-                print(e)
+                print(str(e))
         global async_trash
         async_trash = None
 

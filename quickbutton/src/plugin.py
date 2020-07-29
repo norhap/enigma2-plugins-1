@@ -49,7 +49,7 @@ def getHBBTVInstalled():
 	try:
 		from Plugins.Extensions.HbbTV.HbbTV import HbbTV
 		return config.plugins.hbbtv.enabled.value
-	except ImportError:
+	except ImportError as e:
 		return False
 
 def autostart(reason, **kwargs):
@@ -158,7 +158,7 @@ def startPlugin(self,pname):
 			try:
 				from Plugins.Extensions.HbbTV.HbbTV import HbbTV
 				no_plugin = not config.plugins.hbbtv.enabled.value
-			except ImportError:
+			except ImportError as e:
 				no_plugin = True
 			finally:
 				if not no_plugin:

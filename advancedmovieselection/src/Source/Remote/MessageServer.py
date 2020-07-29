@@ -35,7 +35,7 @@ def getIpAddress(iface):
     interfaces = []
     # parse the interfaces-file
     try:
-        fp = file('/etc/network/interfaces', 'r')
+        fp = open('/etc/network/interfaces', 'r')
         interfaces = fp.readlines()
         fp.close()
     except:
@@ -69,7 +69,7 @@ class TCPHandler(SocketServer.BaseRequestHandler):
             #print(data)
             self.request.send(MessageQueue.getRequest(data))
         except Exception as e:
-            print(e)
+            print(str(e))
 
 class MessageServer():
     def __init__(self):

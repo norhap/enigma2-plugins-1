@@ -1,2 +1,2 @@
 Description: Player for Network and Internet Streams
-Depends: enigma2, gst-plugins-good-icydemux
+Depends:gst-plugins-good-icydemux

@@ -345,7 +345,7 @@ def appendShortDescriptionToMeta(file_name, short_descr):
             metafile.write('%s%s\n%s\n%s' % (sid, title, descr, rest))
             metafile.close()
     except Exception as e:
-        print(e)
+        print(str(e))
 
 
 def setTmdbCertificationtion(movie, file_name):
@@ -355,7 +355,7 @@ def setTmdbCertificationtion(movie, file_name):
             from AccessRestriction import accessRestriction
             accessRestriction.setToService(file_name, cert)
     except Exception as e:
-        print(e)
+        print(str(e))
 
 
 INV_CHARS = [(u'e\u0301', 'e'), (u'\u010c', 'C'), (u'\u010d', 'c'), (u'\u0106', 'c'), (u'\u0107', 'c'), (u'\u0110', 'D'), (u'\u0111', 'd'), (u'\u0160', 'S'), (u'\u0161', 's'),
@@ -471,7 +471,7 @@ def createEIT(file_name, title, overwrite_jpg=False, overwrite_eit=False, movie=
                 print(cast.name)
 
         except Exception as e:
-            print(e)
+            print(str(e))
         else:
             ex_info = []
             if released:
@@ -487,7 +487,7 @@ def createEIT(file_name, title, overwrite_jpg=False, overwrite_eit=False, movie=
                     year = str(released.year)
                     ex_info.append(country + year)
                 except Exception as e:
-                    print(e)
+                    print(str(e))
 
             else:
                 try:
@@ -503,7 +503,7 @@ def createEIT(file_name, title, overwrite_jpg=False, overwrite_eit=False, movie=
                 rt = str(int(runtime))
                 ex_info.append(rt + ' Min')
             except Exception as e:
-                print(e)
+                print(str(e))
 
         if len(directors) > 0:
             ex_info.append('Von ' + (', ').join(directors))
@@ -588,14 +588,14 @@ def createEITtvdb(file_name, title, cover_type='poster', overwrite_jpg=False, ov
                 year = released[0:4]
                 ex_info.append(year)
             except Exception as e:
-                print(e)
+                print(str(e))
 
         if runtime:
             try:
                 rt = str(int(runtime))
                 ex_info.append(rt + ' Min')
             except Exception as e:
-                print(e)
+                print(str(e))
 
         if directors:
             ex_info.append('Von ' + (', ').join(directors))
@@ -791,7 +791,7 @@ class ServiceInfo:
             try:
                 checkCreateMetaFile(serviceref)
             except Exception as e:
-                print(e)
+                print(str(e))
                 if os.path.isfile(serviceref.getPath()):
                     self.name = os.path.basename(serviceref.getPath()).split('.')[0]
                 else:

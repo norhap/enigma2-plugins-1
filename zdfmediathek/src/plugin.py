@@ -62,15 +62,15 @@ if deviceName.startswith("dm7020hd"):
 	PLAY_WMV = True
 try:
 	from LT.LTStreamPlayer import streamplayer
-except ImportError:
+except ImportError as e:
 	try:
 		from Plugins.Extensions.LTMediaCenter.LTStreamPlayer import streamplayer
-	except ImportError:
+	except ImportError as e:
 		streamplayer = None
 
 try:
 	from Plugins.Extensions.VlcPlayer.VlcServerConfig import vlcServerConfig
-except ImportError:
+except ImportError as e:
 	vlcServerConfig = None
 
 ###################################################

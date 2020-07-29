@@ -19,7 +19,7 @@ try:
 
 	from GrowleeConnection import emergencyDisable
 	from . import NOTIFICATIONID
-except ImportError:
+except ImportError as e:
 	def emergencyDisable():
 		our_print('Fallback emergencyDisabled called, stopping reactor')
 		reactor.stop()

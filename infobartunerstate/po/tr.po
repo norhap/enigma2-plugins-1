@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 plugin - InfoBarTunerState\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2020-07-14 04:00+0430\n"
 "PO-Revision-Date: 2015-10-18 15:23+0300\n"
 "Last-Translator: Hasan Kiran <Sunder67@hotmail.com>\n"
 "Language-Team: Turkish <Sunder67@hotmail.com>\n"
@@ -21,28 +21,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.4\n"
 "X-Poedit-SearchPath-0: .../enigma2-plugins/infobartunerstate\n"
 
-msgid ""
-"  (C) 2012 by betonme @ IHAD \n"
-"\n"
-msgstr ""
-
-msgid "  If You like this plugin and want to support it,\n"
-msgstr ""
-
-msgid "  SUPPORT: "
-msgstr ""
-
-msgid ""
-"  Thanks a lot ! \n"
-"  PayPal: "
-msgstr ""
-
-msgid ""
-"  feel free to donate via PayPal. \n"
-"\n"
-msgstr ""
-
-msgid "  or if just want to say ''thanks'',\n"
+msgid "  (C) 2012 by betonme @ IHAD"
 msgstr ""
 
 #, python-format
@@ -300,10 +279,6 @@ msgstr ""
 
 msgid "Tuner"
 msgstr "Tuner"
-
-#, fuzzy
-msgid "Tuner State"
-msgstr "Tuner tipi"
 
 msgid "Tuner Type"
 msgstr "Tuner tipi"

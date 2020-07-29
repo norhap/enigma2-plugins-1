@@ -61,14 +61,14 @@ try:
 	from Plugins.Extensions.Partnerbox.plugin import \
 			showPartnerboxIconsinEPGList
 	PartnerBoxIconsEnabled = showPartnerboxIconsinEPGList()
-except ImportError:
+except ImportError as e:
 	PartnerBoxIconsEnabled = False
 
 try:
 	from Plugins.Extensions.Partnerbox.PartnerboxEPGList import getRemoteClockZapPixmap
 	from Plugins.Extensions.Partnerbox.plugin import showPartnerboxZapRepIconsinEPGList
 	PartnerBoxZapRepIcons = showPartnerboxZapRepIconsinEPGList()
-except ImportError:
+except ImportError as e:
 	PartnerBoxZapRepIcons = False
 
 # AutoTimer installed?
@@ -76,7 +76,7 @@ try:
 	from Plugins.Extensions.AutoTimer.AutoTimerEditor import \
 			addAutotimerFromEvent, addAutotimerFromSearchString
 	autoTimerAvailable = True
-except ImportError:
+except ImportError as e:
 	autoTimerAvailable = False
 
 # Modified EPGSearchList with support for PartnerBox

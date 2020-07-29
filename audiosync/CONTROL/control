@@ -1,4 +1,3 @@
 Replaces: enigma2-plugin-extensions-ac3lipsync
 Conflicts: enigma2-plugin-extensions-ac3lipsync
 Description: Set Audio delay
-Depends: enigma2

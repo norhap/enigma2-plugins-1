@@ -267,7 +267,7 @@ class TMDbMain(Screen, HelpableScreen, InfoLoadChoice):
             shutil.rmtree(IMAGE_TEMPFILE)
         except Exception as e:
             print('[AdvancedMovieSelection] ERROR deleting:', IMAGE_TEMPFILE)
-            print(e)
+            print(str(e))
 
     def startSearch(self):
         self.updateView(self.SHOW_SEARCH)

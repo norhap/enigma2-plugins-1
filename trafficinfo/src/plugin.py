@@ -144,7 +144,7 @@ class TrafficInfoMain(Screen):
                 self.sections.append(TrafficInfoSection(name,link))
             self.onSectionsLoaded()
         except xml.parsers.expat.ExpatError as e:
-            print(e)
+            print(str(e))
             print(raw)
             self.setStatusLabel("loading sections failed")
 
@@ -191,7 +191,7 @@ class TrafficInfoMain(Screen):
                 self.trafficitems.append(self.parseItem(item))
             self.onItemsLoaded()
         except xml.parsers.expat.ExpatError as e:
-            print(e)
+            print(str(e))
             print(raw)
             self.setStatusLabel("loading messages faild! Parsing Error")
         

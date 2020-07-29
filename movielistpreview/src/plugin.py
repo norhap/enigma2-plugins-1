@@ -545,7 +545,7 @@ try:
 	MovieSelectionSP.hide = hideMovieSelection2
 	Show2 = MovieSelectionSP.show
 	MovieSelectionSP.show = showMovieSelection2
-except ImportError:
+except ImportError as e:
 	print("[Movielist Preview] Could not import Suomipoeka Plugin, maybe not installed or too old version?")
 
 ##############################################################################

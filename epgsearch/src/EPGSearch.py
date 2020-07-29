@@ -43,14 +43,14 @@ try:
 	from Plugins.Extensions.Partnerbox.PartnerboxEPGList import isInRemoteTimer, getRemoteClockPixmap
 	from Plugins.Extensions.Partnerbox.plugin import showPartnerboxIconsinEPGList
 	PartnerBoxIconsEnabled = showPartnerboxIconsinEPGList()
-except ImportError:
+except ImportError as e:
 	PartnerBoxIconsEnabled = False
 
 # AutoTimer installed?
 try:
 	from Plugins.Extensions.AutoTimer.AutoTimerEditor import addAutotimerFromEvent, addAutotimerFromSearchString
 	autoTimerAvailable = True
-except ImportError:
+except ImportError as e:
 	autoTimerAvailable = False
 
 rootbouquet_tv = '1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "bouquets.tv" ORDER BY bouquet'

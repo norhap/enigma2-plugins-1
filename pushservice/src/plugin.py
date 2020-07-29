@@ -39,15 +39,7 @@ from PushService import PushService
 # Constants
 NAME = "PushService"
 VERSION = "0.2.9"
-SUPPORT = "http://bit.ly/psihad"
-DONATE = "http://bit.ly/pspaypal"
-ABOUT = "\n  " + NAME + " " + VERSION + "\n\n" \
-				+ _("  (C) 2012 by betonme @ IHAD \n\n") \
-				+ _("  If You like this plugin and want to support it,\n") \
-				+ _("  or if just want to say ''thanks'',\n") \
-				+ _("  feel free to donate via PayPal. \n\n") \
-				+ _("  Thanks a lot ! \n  PayPal: ") + DONATE + "\n" \
-				+ _("  Support: ") + SUPPORT
+ABOUT = "\n  " + NAME + " " + VERSION + "\n\n" + _("  (C) 2012 by betonme @ IHAD")
 
 
 # Globals

@@ -337,7 +337,7 @@ class LastFM(LastFMHandler):
                 data.append(nodex)
             return True,data
         except xml.parsers.expat.ExpatError as e:
-            print(e)
+            print(str(e))
             return False,e
 
     def getNeighbours(self,username):
@@ -389,7 +389,7 @@ class LastFM(LastFMHandler):
                 data.append(nodex)
             return True,data
         except xml.parsers.expat.ExpatError as e:
-            print(e)
+            print(str(e))
             return False,e
 
     def changeStation(self,url):

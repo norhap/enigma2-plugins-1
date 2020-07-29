@@ -26,7 +26,7 @@ def _print(outtxt):
 try:
 	from Plugins.SystemPlugins.AdvHdmi.AdvHdmiCecSetup import AdvHdmiCecSetup
 	g_AdvHdmi_setup_available = True
-except ImportError:
+except ImportError as e:
 	g_AdvHdmi_setup_available = False
 	_print("error while loading AdvHdmiCecSetup")
 	print_exc(file=stdout)
@@ -37,7 +37,7 @@ try:
 	from Plugins.Extensions.WebInterface.WebComponents.Sources.RemoteControl import RemoteControl
 	from Plugins.Extensions.WebInterface.WebComponents.Sources.PowerState import PowerState
 	g_AdvHdmi_webif_available = True
-except ImportError:
+except ImportError as e:
 	_print("No Webinterface-Plugin installed")
 	g_AdvHdmi_webif_available = False
 

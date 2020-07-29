@@ -1,2 +1,2 @@
 Description: Temperature dependent fan control
-Depends: enigma2, hdparm, smartmontools
+Depends: hdparm, smartmontools

@@ -355,7 +355,7 @@ class DVDCutListSupport(CutListSupportBase):
                 name = info.getName()
             return name.replace('\xc2\x86', '').replace('\xc2\x87', '')
         except Exception as e:
-            print(e)
+            print(str(e))
 
         return
 

@@ -17,6 +17,8 @@ from Tools.XMLTools import elementsWithTag, mergeText
 from socket import gethostbyname_ex
 from dreamIRCTools import *
 
+model = getBoxType()
+
 class dreamIRCSetupScreen(ConfigListScreen, Screen):
 	from enigma import getDesktop
 	desk = getDesktop(0)
@@ -47,7 +49,6 @@ class dreamIRCSetupScreen(ConfigListScreen, Screen):
 
 	def __init__(self, session, args = 0):
 		Screen.__init__(self, session)
-		self.device = getBoxType()
 		self.mac=getMacAddress()
 		self.mac_end=self.mac[6:]
 		self.dreamIRCconf = ConfigSubsection()
@@ -99,11 +100,11 @@ class dreamIRCSetupScreen(ConfigListScreen, Screen):
 				self.debug = node.getAttribute("debug")
 			if ((self.nick.lower() == "dreamircuser") or (self.nick == "") or (self.nick[0] == " ") or (self.nick.lower() == "dm8000-vip")) :
 				print("[dreamIRC] nickname error... restoring default...")
-				self.nick = self.device+"_"+self.mac_end
+				self.nick = model+"_"+self.mac_end
 		except IOError:
 			self.type = "IRC"
 			self.login = "1"
-			self.nick = self.device+"_"+self.mac_end
+			self.nick = model+"_"+self.mac_end
 			self.passwd = ""
 			self.server1 = "irc.belwue.de"
 			self.server2 = "irc.freenet.de"
@@ -172,7 +173,6 @@ class dreamIRCConfig:
 		self.status1=False
 		self.status2=False
 		self.status3=False
-		self.device = getBoxType()
 		self.mac=getMacAddress()
 		self.mac_end=self.mac[6:]
 		try:
@@ -184,7 +184,7 @@ class dreamIRCConfig:
 				self.nick = node.getAttribute("nick")
 				if ((self.nick.lower() == "dreamircuser") or (self.nick == "") or (self.nick[0] == " ") or (self.nick.lower() == "dm8000-vip")) :
 					print("[dreamIRC] nickname error... restoring default...")
-					self.nick = self.device+"_"+self.mac_end
+					self.nick = model+"_"+self.mac_end
 				self.passwd = node.getAttribute("passwd")
 				self.server1 = node.getAttribute("server1") # atm only ip.. cause of probs with theads and dns..
 				self.server2 = node.getAttribute("server2") 
@@ -195,7 +195,7 @@ class dreamIRCConfig:
 		except IOError:
 			self.type = "IRC"
 			self.login = "1"
-			self.nick = self.device+"_"+self.mac_end
+			self.nick = model+"_"+self.mac_end
 			self.passwd = ""
 			self.server1 = "irc.freenet.de"
 			self.server2 = "irc.freenet.de"

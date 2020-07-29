@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-#!/usr/bin/env python
 
 # Derived from ping.c distributed in Linux's netkit. That code is
 # copyright (c) 1989 by The Regents of the University of California.

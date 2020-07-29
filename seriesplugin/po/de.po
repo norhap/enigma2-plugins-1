@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SeriesPlugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2020-07-14 04:00+0430\n"
 "PO-Revision-Date: 2016-03-06 17:49+0100\n"
 "Last-Translator: James Blond <jb@unknown.com>\n"
 "Language-Team: \n"
@@ -29,28 +29,8 @@ msgstr ""
 "  (C) 2012 von betonme @ IHAD \n"
 "\n"
 
-msgid "  Feel free to donate. \n"
-msgstr "  Fühl dich frei zu Spenden. \n"
-
-msgid ""
-"  How much time have You saved?\n"
-"\n"
-msgstr ""
-"  Wieviel Zeit hast Du gespart?\n"
-"\n"
-
-msgid "  PayPal: "
-msgstr "  PayPal: "
-
-msgid "  Support: "
-msgstr "  Unterstützung: "
-
 msgid "  Terms: "
 msgstr "  Bedingungen: "
-
-#, python-brace-format
-msgid "  {lookups:d} successful lookups.\n"
-msgstr "  {lookups:d} Erfolgreiche Treffer.\n"
 
 #, python-format
 msgid "%d min"

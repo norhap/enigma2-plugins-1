@@ -86,4 +86,4 @@ class MovieConfig:
                 f.write('%' + x + "\r\n")
             f.close()
         except Exception as e:
-            print(e)
+            print(str(e))

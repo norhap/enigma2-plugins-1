@@ -1,2 +1,2 @@
 Description: Shows you screenshots of the services in a selected bouquet
-Depends: enigma2, aio-grab
+Depends: aio-grab

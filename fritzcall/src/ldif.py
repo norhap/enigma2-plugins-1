@@ -33,7 +33,7 @@ import urlparse,urllib,base64,re,types
 
 try:
   from cStringIO import StringIO
-except ImportError:
+except ImportError as e:
   from StringIO import StringIO
 
 attrtype_pattern = r'[\w;.]+(;[\w_-]+)*'

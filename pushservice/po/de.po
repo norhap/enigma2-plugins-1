@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 PushService Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2020-07-14 04:00+0430\n"
 "PO-Revision-Date: 2011-09-11 11:43+0100\n"
 "Last-Translator: betonme <glaserfrank(at)gmail.com>\n"
 "Language-Team: none\n"
@@ -16,28 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
-msgid ""
-"  (C) 2012 by betonme @ IHAD \n"
-"\n"
-msgstr ""
-
-msgid "  If You like this plugin and want to support it,\n"
-msgstr ""
-
-msgid "  Support: "
-msgstr ""
-
-msgid ""
-"  Thanks a lot ! \n"
-"  PayPal: "
-msgstr ""
-
-msgid ""
-"  feel free to donate via PayPal. \n"
-"\n"
-msgstr ""
-
-msgid "  or if just want to say ''thanks'',\n"
+msgid "  (C) 2012 by betonme @ IHAD"
 msgstr ""
 
 msgid "%H:%M"
@@ -112,9 +91,6 @@ msgstr ""
 msgid "Don't edit this manually unless you really know what you are doing"
 msgstr ""
 
-msgid "Donate {donate:s}"
-msgstr ""
-
 msgid "Dreambox name"
 msgstr ""
 
@@ -157,9 +133,6 @@ msgstr ""
 msgid "Growl Port"
 msgstr ""
 
-msgid "OPKG Update Notification"
-msgstr ""
-
 msgid "If You can see this, Your configuration is correct."
 msgstr ""
 
@@ -190,6 +163,9 @@ msgid "Nothing to test"
 msgstr ""
 
 msgid "OK"
+msgstr ""
+
+msgid "OPKG Update Notification"
 msgstr ""
 
 msgid "Page down"
@@ -369,9 +345,6 @@ msgstr ""
 msgid "Start update check if not done yet"
 msgstr ""
 
-msgid "Support {support:s}\n"
-msgstr ""
-
 msgid "Test"
 msgstr ""
 
@@ -448,6 +421,9 @@ msgstr ""
 
 #, python-format
 msgid "controller %s returned error(s)"
+msgstr ""
+
+msgid "{body:s}"
 msgstr ""
 
 msgid ""

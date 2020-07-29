@@ -1,2 +1,2 @@
 Description: Create previews for movies and show them in the movielist
-Depends: aio-grab, enigma2
+Depends: aio-grab

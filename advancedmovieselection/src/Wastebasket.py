@@ -339,7 +339,7 @@ class Wastebasket(Screen, HelpableScreen):
             self["list"].removeService(self.service)
             Trashcan.delete(self.service.getPath())
         except Exception as e:
-            print(e)
+            print(str(e))
             self.session.open(MessageBox, _("Delete failed!"), MessageBox.TYPE_ERROR)
             return
         self.delayTimer.start(0, 1)
@@ -375,7 +375,7 @@ class Wastebasket(Screen, HelpableScreen):
             self["list"].removeService(service)
             Trashcan.restore(service.getPath())
         except Exception as e:
-            print(e)
+            print(str(e))
             self.session.open(MessageBox, _("Restore failed!"), MessageBox.TYPE_ERROR)
             return
         self.delayTimer.start(0, 1)        
@@ -388,7 +388,7 @@ class Wastebasket(Screen, HelpableScreen):
                 self["list"].removeService(service)
                 Trashcan.restore(service.getPath())
         except Exception as e:
-            print(e)
+            print(str(e))
             self.session.open(MessageBox, _("Restore failed!"), MessageBox.TYPE_ERROR)
         self.close()
 

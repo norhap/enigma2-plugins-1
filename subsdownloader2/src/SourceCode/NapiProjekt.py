@@ -30,7 +30,7 @@ i = 0
 i_total = 0
 try:
     from hashlib import md5 as md5
-except ImportError:
+except ImportError as e:
     from md5 import md5
     
 languages = { 'pl': 'PL', 'en': 'ENG' }

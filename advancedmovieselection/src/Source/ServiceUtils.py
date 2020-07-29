@@ -71,7 +71,7 @@ def getFolderSize(loadPath):
                     folder_size += os.path.getsize(filename)
 
     except Exception as e:
-        print(e)
+        print(str(e))
 
     return folder_size
 
@@ -85,7 +85,7 @@ def getDirSize(root):
                 folder_size += os.path.getsize(p)
 
     except Exception as e:
-        print(e)
+        print(str(e))
 
     return folder_size
 
@@ -467,7 +467,7 @@ class JobMonitor:
                         monitor.removeJob(job)
                         continue
                 except Exception as e:
-                    print(e)
+                    print(str(e))
 
             time.sleep(update_time)
 

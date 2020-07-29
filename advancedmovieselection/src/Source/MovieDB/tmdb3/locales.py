@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
 #-----------------------
 # Name: locales.py    Stores locale information for filtering results
 # Python Library

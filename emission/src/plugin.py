@@ -31,7 +31,7 @@ NOTIFICATIONID = 'EmissionAutodownloadError'
 def simplerss_update_callback(id = None):
 	try:
 		from Plugins.Extensions.SimpleRSS.plugin import rssPoller
-	except ImportError:
+	except ImportError as e:
 		pass # should not happen since the poller has to be active for us to be called :-)
 	else:
 		errors = 0
@@ -73,7 +73,7 @@ def simplerss_update_callback(id = None):
 def simplerss_handle_callback(el):
 	try:
 		from Plugins.Extensions.SimpleRSS.RSSPoller import update_callbacks
-	except ImportError:
+	except ImportError as e:
 		# Notify the user about a too old or missing SimpleRSS instalation when
 		# enabling this feature
 		if not el.value:
@@ -88,7 +88,7 @@ def simplerss_handle_callback(el):
 				MessageBox.TYPE_ERROR,
 				5
 			)
-		except ImportError:
+		except ImportError as e:
 			AddPopup(
 				_("This feature requires SimpleRSS to be installed.\nYou can do so with the Plugin Installer, see the User Manual for further explanation."),
 				MessageBox.TYPE_ERROR,

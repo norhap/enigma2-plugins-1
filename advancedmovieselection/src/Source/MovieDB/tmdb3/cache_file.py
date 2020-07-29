@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
 #-----------------------
 # Name: cache_file.py
 # Python Library
@@ -93,7 +92,7 @@ try:
         # return path with temp directory prepended
         return '/tmp/' + filename
 
-except ImportError:
+except ImportError as e:
     import msvcrt
     class Flock( object ):
         LOCK_EX = msvcrt.LK_LOCK

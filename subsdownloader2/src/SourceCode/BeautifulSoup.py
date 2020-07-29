@@ -94,7 +94,7 @@ import re
 import sgmllib
 try:
   from htmlentitydefs import name2codepoint
-except ImportError:
+except ImportError as e:
   name2codepoint = {}
 try:
     set
@@ -1738,7 +1738,7 @@ try:
     import chardet
 #    import chardet.constants
 #    chardet.constants._debug = 1
-except ImportError:
+except ImportError as e:
     chardet = None
 
 # cjkcodecs and iconv_codec make Python know about more character encodings.
@@ -1746,11 +1746,11 @@ except ImportError:
 # They're built in if you use Python 2.4.
 try:
     import cjkcodecs.aliases
-except ImportError:
+except ImportError as e:
     pass
 try:
     import iconv_codec
-except ImportError:
+except ImportError as e:
     pass
 
 class UnicodeDammit:
@@ -1834,7 +1834,7 @@ class UnicodeDammit:
             self.originalEncoding = proposed
         except Exception as e:
             # print("That didn't work!")
-            # print(e)
+            # print(str(e))
             return None
         #print("Correct encoding: %s" % proposed)
         return self.markup

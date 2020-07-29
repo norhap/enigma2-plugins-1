@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 plugin - infobartunerstate\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2020-07-14 04:00+0430\n"
 "PO-Revision-Date: 2012-05-06 22:36+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -20,36 +20,11 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .../enigma2-plugins/infobartunerstate\n"
 
-msgid ""
-"  (C) 2012 by betonme @ IHAD \n"
-"\n"
+#, fuzzy
+msgid "  (C) 2012 by betonme @ IHAD"
 msgstr ""
 "  (C) 2012 by betonme @ IHAD \n"
 "\n"
-
-msgid "  If You like this plugin and want to support it,\n"
-msgstr "  Se questo plugin piace e si desiderasse supportarlo,\n"
-
-msgid "  SUPPORT: "
-msgstr "SUPPORTO: "
-
-msgid ""
-"  Thanks a lot ! \n"
-"  PayPal: "
-msgstr ""
-"  Mille grazie!\n"
-"\n"
-"  PayPal: "
-
-msgid ""
-"  feel free to donate via PayPal. \n"
-"\n"
-msgstr ""
-"  è possibile contribuire con PayPal.\n"
-"\n"
-
-msgid "  or if just want to say ''thanks'',\n"
-msgstr "  o semplicemente si volesse ringraziare,\n"
 
 #, python-format
 msgid "%d"
@@ -295,9 +270,6 @@ msgstr "Progresso timer (testo)"
 
 msgid "Tuner"
 msgstr "Tuner"
-
-msgid "Tuner State"
-msgstr ""
 
 msgid "Tuner Type"
 msgstr "Tipo tuner"

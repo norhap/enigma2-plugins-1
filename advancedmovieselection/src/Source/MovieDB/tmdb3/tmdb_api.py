@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
 #-----------------------
 # Name: tmdb_api.py    Simple-to-use Python interface to TMDB's API v3
 # Python Library

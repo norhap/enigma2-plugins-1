@@ -1846,7 +1846,7 @@ class FritzCallPhonebook(object):
 # 			try:
 # 				readOutlookCSV(csvFilename, self.add)
 # 				os.rename(csvFilename, csvFilename + ".done")
-# 			except ImportError:
+# 			except ImportError as e:
 # 				debug("[FritzCallPhonebook] CSV import failed" %line)
 #===============================================================================
 
@@ -1862,7 +1862,7 @@ class FritzCallPhonebook(object):
 # 				parser = MyLDIF(open(ldifFilename), self.add)
 # 				parser.parse()
 # 				os.rename(ldifFilename, ldifFilename + ".done")
-# 			except ImportError:
+# 			except ImportError as e:
 # 				debug("[FritzCallPhonebook] LDIF import failed" %line)
 #===============================================================================
 

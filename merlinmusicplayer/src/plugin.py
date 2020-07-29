@@ -301,7 +301,7 @@ def sendUrlCommand(url, contextFactory=None, timeout=60, *args, **kwargs):
 		# _URI class renamed to URI in 15.0.0
 		try:
 			from twisted.web.client import _URI as URI
-		except ImportError:
+		except ImportError as e:
 			from twisted.web.client import URI
 		uri = URI.fromBytes(url)
 		scheme = uri.scheme

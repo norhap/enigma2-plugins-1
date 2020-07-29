@@ -82,7 +82,7 @@ from PrimeTimeSettings import PrimeTimeSettings
 try:
 	from Plugins.Extensions.AutoTimer.AutoTimerEditor import addAutotimerFromEvent
 	AUTOTIMER = True
-except ImportError:
+except ImportError as e:
 	AUTOTIMER = False
 
 # HD services stuff

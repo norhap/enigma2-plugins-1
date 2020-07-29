@@ -98,7 +98,7 @@ msgid "WeatherPlugin: List of Entries"
 msgstr "Hava Durumu Eklentisi: Girişlerin Listesi"
 
 msgid "You need to enter a valid city name before you can search for the location code."
-msgstr ""
+msgstr "Konum kodunu arayabilmeniz için önce geçerli bir şehir adı girmeniz gerekir."
 
 msgid "imperial system"
 msgstr "emperyalist sistem"

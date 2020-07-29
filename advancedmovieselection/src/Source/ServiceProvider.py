@@ -215,7 +215,7 @@ class ServiceInfo:
             try:
                 meta_path = checkCreateMetaFile(serviceref)
             except Exception as e:
-                print(e)
+                print(str(e))
                 if os.path.isfile(serviceref.getPath()):
                     self.name = os.path.basename(serviceref.getPath()).split('.')[0]
                 else:
@@ -301,7 +301,7 @@ class Info:
                 return getFolderSize(os.path.dirname(dvd))
             return os.path.getsize(serviceref.getPath())
         except Exception as e:
-            print(e)
+            print(str(e))
             return -1
 
     def getServiceReference(self):

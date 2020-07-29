@@ -1,5 +1,5 @@
 Description: eParted manipulates partition tables
-Depends: enigma2, parted
+Depends: parted
 Provides: enigma2-plugin-extensions-eparted
 Conflicts: eparted
 Replaces: eparted

@@ -15,7 +15,7 @@ from Tools.LoadPixmap import LoadPixmap
 try:
 	from Plugins.Extensions.AutoTimer.AutoTimerEditor import addAutotimerFromEvent
 	AUTOTIMER = True
-except ImportError:
+except ImportError as e:
 	AUTOTIMER = False
 
 size_width = getDesktop(0).size().width()

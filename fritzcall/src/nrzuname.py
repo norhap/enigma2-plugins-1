@@ -149,7 +149,7 @@ def simpleout(number, caller):  # @UnusedVariable # pylint: disable=W0613
 
 try:
 	reverseLookupFileName = resolveFilename(SCOPE_PLUGINS, "Extensions/FritzCall/reverselookup.xml")
-except ImportError:
+except ImportError as e:
 	reverseLookupFileName = "reverselookup.xml"
 
 countries = {}

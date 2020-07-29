@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#!/usr/bin/env python
 #
 # Copyright 2010 Alexandre Fiori
 # based on the original Tornado by Facebook

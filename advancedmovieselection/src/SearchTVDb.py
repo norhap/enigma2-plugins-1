@@ -252,7 +252,7 @@ class TheTVDBMain(Screen, InfoLoadChoice):
             shutil.rmtree(temp_dir)
         except Exception as e:
             print('[AdvancedMovieSelection] ERROR deleting:', temp_dir)
-            print(e)
+            print(str(e))
 
     def cancel(self):
         self.close(False)
@@ -275,7 +275,7 @@ class TheTVDBMain(Screen, InfoLoadChoice):
                     tmpList.append((movie, _id))
 
         except Exception as e:
-            print(e)
+            print(str(e))
 
         if len(tmpList) > 0:
             self['list'].setList(tmpList)
@@ -337,7 +337,7 @@ class TheTVDBMain(Screen, InfoLoadChoice):
                     tmpEpisodeList.append((episode, episode_name, episode_number, episode_season_number, episode_id, episode_overview))
 
             except Exception as e:
-                print(e)
+                print(str(e))
 
         if len(tmpEpisodeList) > 0:
             self.updateView(self.SHOW_EPISODE_LIST)
@@ -394,7 +394,7 @@ class TheTVDBMain(Screen, InfoLoadChoice):
                 self['extended_episode'].setText(extended)
                 self.updateView(self.SHOW_EPISODE_DETAIL)
             except Exception as e:
-                print(e)
+                print(str(e))
                 self.updateView(self.SHOW_EPISODE_NO_RESULT)
 
     def searchManual(self):
@@ -467,7 +467,7 @@ class TheTVDBMain(Screen, InfoLoadChoice):
             else:
                 self['voted'].setText(_('No user voted!'))
         except Exception as e:
-            print(e)
+            print(str(e))
             self.updateView(self.SHOW_SERIE_NO_RESULT)
 
         return
@@ -541,7 +541,7 @@ class TheTVDBMain(Screen, InfoLoadChoice):
         try:
             first_aired = datetime.date(*map(int, date_string.encode('utf-8', 'ignore').split('-')))
         except Exception as e:
-            print(e)
+            print(str(e))
 
         return first_aired
 

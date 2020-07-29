@@ -42,7 +42,7 @@ class AccessRestriction:
         try:
             return int(access[4:])
         except Exception as e:
-            print(e)
+            print(str(e))
             return -1 # type as error
     
     def isAccessible(self, tags):
@@ -93,6 +93,6 @@ class AccessRestriction:
             metafile.write("%s\n%s\n%s\n%s\n%s\n%s" % (sid, title, descr, time, tags, rest))
             metafile.close()
         except Exception as e:
-            print(e)
+            print(str(e))
 
 accessRestriction = AccessRestriction();

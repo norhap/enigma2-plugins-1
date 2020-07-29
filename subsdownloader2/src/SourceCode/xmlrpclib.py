@@ -153,7 +153,7 @@ except NameError:
 
 try:
     import datetime
-except ImportError:
+except ImportError as e:
     datetime = None
 
 try:
@@ -472,7 +472,7 @@ def _datetime_type(data):
 import base64
 try:
     import cStringIO as StringIO
-except ImportError:
+except ImportError as e:
     import StringIO
 
 class Binary:
@@ -540,7 +540,7 @@ try:
     import sgmlop
     if not hasattr(sgmlop, "XMLParser"):
         raise ImportError
-except ImportError:
+except ImportError as e:
     SgmlopParser = None # sgmlop accelerator not available
 else:
     class SgmlopParser:
@@ -583,7 +583,7 @@ try:
     from xml.parsers import expat
     if not hasattr(expat, "ParserCreate"):
         raise ImportError
-except ImportError:
+except ImportError as e:
     ExpatParser = None # expat not available
 else:
     class ExpatParser:

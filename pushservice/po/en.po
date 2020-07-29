@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2020-07-14 04:00+0430\n"
 "PO-Revision-Date: 2012-12-03 15:01+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,35 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid ""
-"  (C) 2012 by betonme @ IHAD \n"
-"\n"
+#, fuzzy
+msgid "  (C) 2012 by betonme @ IHAD"
 msgstr ""
 "  (C) 2012 by betonme @ IHAD \n"
 "\n"
-
-msgid "  If You like this plugin and want to support it,\n"
-msgstr "  If You like this plugin and want to support it,\n"
-
-msgid "  Support: "
-msgstr "  Support: "
-
-msgid ""
-"  Thanks a lot ! \n"
-"  PayPal: "
-msgstr ""
-"  Thanks a lot ! \n"
-"  PayPal: "
-
-msgid ""
-"  feel free to donate via PayPal. \n"
-"\n"
-msgstr ""
-"  feel free to donate via PayPal. \n"
-"\n"
-
-msgid "  or if just want to say ''thanks'',\n"
-msgstr "  or if just want to say ''thanks'',\n"
 
 msgid "%H:%M"
 msgstr ""
@@ -123,9 +99,6 @@ msgstr ""
 msgid "Don't edit this manually unless you really know what you are doing"
 msgstr "Don't edit this manually unless you really know what you are doing"
 
-msgid "Donate {donate:s}"
-msgstr ""
-
 msgid "Dreambox name"
 msgstr "Dreambox name"
 
@@ -168,9 +141,6 @@ msgstr ""
 msgid "Growl Port"
 msgstr ""
 
-msgid "OPKG Update Notification"
-msgstr ""
-
 msgid "If You can see this, Your configuration is correct."
 msgstr "If You can see this, Your configuration is correct."
 
@@ -202,6 +172,9 @@ msgstr "Nothing to test"
 
 msgid "OK"
 msgstr "OK"
+
+msgid "OPKG Update Notification"
+msgstr ""
 
 msgid "Page down"
 msgstr "Page down"
@@ -392,9 +365,6 @@ msgstr "Start time (HH:MM)"
 msgid "Start update check if not done yet"
 msgstr ""
 
-msgid "Support {support:s}\n"
-msgstr ""
-
 msgid "Test"
 msgstr "Test"
 
@@ -481,6 +451,9 @@ msgstr "configuration"
 #, python-format
 msgid "controller %s returned error(s)"
 msgstr "controller %s returned error(s)"
+
+msgid "{body:s}"
+msgstr ""
 
 msgid ""
 "{body:s}\n"

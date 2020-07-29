@@ -51,7 +51,7 @@ class Network():
                         return False
             return True
         except Exception as e:
-            print(e)
+            print(str(e))
             return True
     
     def getOnlineMount(self, dirs):
@@ -82,7 +82,7 @@ class Network():
                         self.auto_network.append((os.path.join(self.mount_path, val[0]), dest_addr))
             print(self.auto_network)
         except Exception as e:
-            print(e)
+            print(str(e))
 
 autoNetwork = Network()
 

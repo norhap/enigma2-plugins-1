@@ -147,7 +147,7 @@ def autostart(reason,**kwargs):
                     reactor.listenTCP(int(config.plugins.httpproxy.port.value), ProxyFactory(),interface=extip)
         except Exception as e:
             print("starting the http proxy failed!")
-            print(e)
+            print(str(e))
 
 
 def Plugins(**kwargs):

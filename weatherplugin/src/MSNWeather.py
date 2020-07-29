@@ -125,7 +125,7 @@ class MSNWeather:
 		self.callback = callback
 		self.callbackShowIcon  = callbackShowIcon
 		self.callbackAllIconsDownloaded = callbackAllIconsDownloaded
-		url = "http://weather.service.msn.com/data.aspx?src=windows&weadegreetype=%s&culture=%s&wealocations=%s" % (degreetype, language, urllib_quote(locationcode))
+		url = "http://weather.service.msn.com/data.aspx?src=outlook&weadegreetype=%s&culture=%s&wealocations=%s" % (degreetype, language, urllib_quote(locationcode))
 		getPage(url).addCallback(self.xmlCallback).addErrback(self.error)
 		
 	def getDefaultWeatherData(self, callback = None, callbackAllIconsDownloaded = None):
@@ -157,7 +157,7 @@ class MSNWeather:
 		
 	def showIcon(self, index, filename):
 		if self.callbackShowIcon is not None:
-				self.callbackShowIcon(index, filename)
+			self.callbackShowIcon(index, filename)
 				
 	def finishedAllDownloadFiles(self, result):
 		if self.callbackAllIconsDownloaded is not None:

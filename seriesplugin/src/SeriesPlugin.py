@@ -115,13 +115,13 @@ def getInstance():
 				from Plugins.Extensions.AutoTimer.plugin import AUTOTIMER_VERSION
 				if int(AUTOTIMER_VERSION[0]) < 4:
 					deprecated = True
-			except ImportError:
+			except ImportError as e:
 				AUTOTIMER_VERSION = "deprecated"
 				deprecated = True
 			log.debug( " AutoTimer: " + AUTOTIMER_VERSION )
 			if deprecated:
 				log.warning( _("Your autotimer is deprecated")  + "\n" +_("Please update it") )
-		except ImportError:
+		except ImportError as e:
 			log.debug( " AutoTimer: Not found" )
 		
 		# Check dependencies
@@ -131,7 +131,7 @@ def getInstance():
 		for dependency in dependencies:
 			try:
 				find_module(dependency)
-			except ImportError:
+			except ImportError as e:
 				start = False
 				log.error( _("Error missing dependency")  + "\n" + "python-"+dependency + "\n\n" +_("Please install missing python paket manually") )
 		if start:

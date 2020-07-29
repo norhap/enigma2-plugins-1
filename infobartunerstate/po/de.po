@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 InfoBarTunerState Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2020-07-14 04:00+0430\n"
 "PO-Revision-Date: 2012-05-08 18:53+0100\n"
 "Last-Translator: Ralf Biedermann <ralf.biedermann@rbsoft.de>\n"
 "Language-Team: none\n"
@@ -16,28 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
-msgid ""
-"  (C) 2012 by betonme @ IHAD \n"
-"\n"
-msgstr ""
-
-msgid "  If You like this plugin and want to support it,\n"
-msgstr ""
-
-msgid "  SUPPORT: "
-msgstr ""
-
-msgid ""
-"  Thanks a lot ! \n"
-"  PayPal: "
-msgstr ""
-
-msgid ""
-"  feel free to donate via PayPal. \n"
-"\n"
-msgstr ""
-
-msgid "  or if just want to say ''thanks'',\n"
+msgid "  (C) 2012 by betonme @ IHAD"
 msgstr ""
 
 #, python-format
@@ -283,9 +262,6 @@ msgid "Timer Progress (Text)"
 msgstr "Timerfortschritt (Text)"
 
 msgid "Tuner"
-msgstr ""
-
-msgid "Tuner State"
 msgstr ""
 
 msgid "Tuner Type"

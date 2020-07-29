@@ -248,7 +248,7 @@ class VideoPreview():
                                 return
                             self.fwd_timer.start(1000, True)
                 except Exception as e:
-                    print(e)
+                    print(str(e))
 
     def fwd(self):
         self.seekRelativ(self.minutes)

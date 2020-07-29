@@ -53,7 +53,7 @@ class MessageQueue:
                 config.AdvancedMovieSelection.server_port.value = port  
                 config.AdvancedMovieSelection.server_port.save()
             except Exception as e:
-                print(e)
+                print(str(e))
         elif data == "nextTrashEvent":
             from Components.config import config
             if config.AdvancedMovieSelection.auto_empty_wastebasket.value == "-1":

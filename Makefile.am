@@ -81,7 +81,6 @@ SUBDIRS = \
 	recordinfobar \
 	reftopiconname \
 	remotetimer \
-	rsdownloader \
 	schiffe \
 	seriesplugin \
 	setpasswd \

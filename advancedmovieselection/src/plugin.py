@@ -93,7 +93,7 @@ def tmdbInfo(session, eventName="", **kwargs):
             from SearchTMDb import TMDbMain
             session.open(TMDbMain, eventName)
     except Exception as e:
-        print(e)
+        print(str(e))
         
 def tvdbInfo(session, eventName="", **kwargs):
     try:
@@ -108,7 +108,7 @@ def tvdbInfo(session, eventName="", **kwargs):
             from SearchTVDb import TheTVDBMain
             session.open(TheTVDBMain, None, eventName, shortdescr) 
     except Exception as e:
-        print(e)
+        print(str(e))
 
 def Plugins(**kwargs):
     try:
@@ -121,7 +121,7 @@ def Plugins(**kwargs):
         if not config.AdvancedMovieSelection.ml_disable.value and config.AdvancedMovieSelection.useseekbar.value:
             from Seekbar import Seekbar
     except Exception as e:
-        print(e)
+        print(str(e))
     
     descriptors = []
     if not config.AdvancedMovieSelection.ml_disable.value:

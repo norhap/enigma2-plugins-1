@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: InfoBarTunerState\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2020-07-14 04:00+0430\n"
 "PO-Revision-Date: 2017-07-10 17:25+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: \n"
@@ -21,28 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: .../enigma2-plugins/infobartunerstate\n"
 
-msgid ""
-"  (C) 2012 by betonme @ IHAD \n"
-"\n"
-msgstr ""
-
-msgid "  If You like this plugin and want to support it,\n"
-msgstr ""
-
-msgid "  SUPPORT: "
-msgstr ""
-
-msgid ""
-"  Thanks a lot ! \n"
-"  PayPal: "
-msgstr ""
-
-msgid ""
-"  feel free to donate via PayPal. \n"
-"\n"
-msgstr ""
-
-msgid "  or if just want to say ''thanks'',\n"
+msgid "  (C) 2012 by betonme @ IHAD"
 msgstr ""
 
 #, python-format
@@ -304,10 +283,6 @@ msgstr "Laikmačio eiga (tekstinė)"
 
 msgid "Tuner"
 msgstr "Imtuvas"
-
-#, fuzzy
-msgid "Tuner State"
-msgstr "Imtuvo stovis infojuostoje"
 
 msgid "Tuner Type"
 msgstr "Imtuvo tipas"

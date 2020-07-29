@@ -46,7 +46,7 @@ else:
 	try:
 		import servicets
 	except Exception as e:
-		print(e)
+		print(str(e))
 		print("[VLC] Checking for usable gstreamer service ... ",)
 		if isValidServiceId(ENIGMA_SERVICEGS_ID):
 			print("yes")
@@ -143,7 +143,7 @@ class VlcService(Source, iPlayableServicePtr, iSeekableService):
 			if self.stats and self.stats.has_key("time"):
 				print("Time: ", self.stats["time"])
 		except Exception as e:
-			print(e)
+			print(str(e))
 
 	def refresh(self):
 		self.__onRefresh()

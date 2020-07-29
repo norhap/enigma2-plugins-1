@@ -97,7 +97,7 @@ def simpleout(number, caller): #@UnusedVariable # pylint: disable-msg=W0613
 try:
 	from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 	reverseLookupFileName = resolveFilename(SCOPE_PLUGINS, "Extensions/NcidClient/reverselookup.xml")
-except ImportError:
+except ImportError as e:
 	reverseLookupFileName = "reverselookup.xml"
 
 countries = { }

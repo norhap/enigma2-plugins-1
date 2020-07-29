@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 plugin - pushservice\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-05 03:21+0430\n"
+"POT-Creation-Date: 2020-07-14 04:00+0430\n"
 "PO-Revision-Date: 2014-02-23 20:44+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -19,35 +19,11 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: ../enigma2-plugins/pushservice\n"
 
-msgid ""
-"  (C) 2012 by betonme @ IHAD \n"
-"\n"
+#, fuzzy
+msgid "  (C) 2012 by betonme @ IHAD"
 msgstr ""
 "  (C) 2012 by betonme @ IHAD \n"
 "\n"
-
-msgid "  If You like this plugin and want to support it,\n"
-msgstr "  Se questo plugin piace e si desidera supportarlo,\n"
-
-msgid "  Support: "
-msgstr "Supporto: "
-
-msgid ""
-"  Thanks a lot ! \n"
-"  PayPal: "
-msgstr ""
-"  Mille grazie!\n"
-"  PayPal: "
-
-msgid ""
-"  feel free to donate via PayPal. \n"
-"\n"
-msgstr ""
-"  è possibile contribuire con PayPal.\n"
-"\n"
-
-msgid "  or if just want to say ''thanks'',\n"
-msgstr "  o semplicemente si vuole ringraziare,\n"
 
 msgid "%H:%M"
 msgstr "%H:%M"
@@ -125,9 +101,6 @@ msgstr "Rimuovere i CrashLog"
 msgid "Don't edit this manually unless you really know what you are doing"
 msgstr "Non modificare alcun parametro se non si è certi di quello che si sta facendo!"
 
-msgid "Donate {donate:s}"
-msgstr "Donare {donate:s}"
-
 msgid "Dreambox name"
 msgstr "Nome Dreambox"
 
@@ -172,9 +145,6 @@ msgstr "Nome host Growl"
 msgid "Growl Port"
 msgstr "Porta Growl"
 
-msgid "OPKG Update Notification"
-msgstr "Notifiche aggiornamenti OPKG"
-
 msgid "If You can see this, Your configuration is correct."
 msgstr "Se viene visualizzato questo messaggio la configurazione è corretta."
 
@@ -206,6 +176,9 @@ msgstr "Nulla da verificare"
 
 msgid "OK"
 msgstr "Ok"
+
+msgid "OPKG Update Notification"
+msgstr "Notifiche aggiornamenti OPKG"
 
 msgid "Page down"
 msgstr "Pagina giù"
@@ -386,9 +359,6 @@ msgstr "Ora di avvio (HH:MM)"
 msgid "Start update check if not done yet"
 msgstr "Avviare verifica aggiornamenti (se mai eseguita)"
 
-msgid "Support {support:s}\n"
-msgstr "Supporto {support:s}\n"
-
 msgid "Test"
 msgstr "Test"
 
@@ -477,6 +447,12 @@ msgstr "Configurazione"
 #, python-format
 msgid "controller %s returned error(s)"
 msgstr "Il controllo %s ha restituito errori"
+
+#, fuzzy
+msgid "{body:s}"
+msgstr ""
+"{body:s}\n"
+"\n"
 
 msgid ""
 "{body:s}\n"
