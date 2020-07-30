@@ -163,7 +163,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		if mounttype == "nfs":
 			defaultOptions = "rw,nolock,tcp"
 		else:
-			defaultOptions = "rw,utf8,vers=3.0"
+			defaultOptions = "rw,utf8,vers=1.0"
 		if self.mountinfo['sharename'] and self.mountinfo.has_key('sharename'):
 			sharename = re_sub("\W", "", self.mountinfo['sharename'])
 			self.old_sharename = sharename
@@ -251,7 +251,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			if self.mounttypeConfigEntry.value == "nfs":
 				defaultOptions = "rw,nolock,tcp"
 			else:
-				defaultOptions = "rw,utf8,vers=3.0"
+				defaultOptions = "rw,utf8,vers=1.0"
 			if self.mountinfo.has_key('options'):
 				options = self.mountinfo['options']
 			else:
