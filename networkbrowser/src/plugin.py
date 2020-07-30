@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 # for localized messages
 from __init__ import _
@@ -39,14 +38,14 @@ class MountAgainCheckPoller:
 			service = self.session.nav.getCurrentlyPlayingServiceReference()
 			isPlaying = service.toString()
 			if not self.session.nav.RecordTimer.isRecording() and not isPlaying.startswith('1:0:0:0:0:0:0:0:0:0:'):
-				print('[Networkbrowser MountAgain] Mounting network shares...')
+				print '[Networkbrowser MountAgain] Mounting network shares...'
 				task = Components.Task.PythonTask(job, _("Mounting network shares..."))
 				task.work = self.JobEpgCache
 				task.weighting = 1
 			elif self.session.nav.RecordTimer.isRecording():
-				print('[Networkbrowser MountAgain] Skipping, as recording is in place.')
+				print '[Networkbrowser MountAgain] Skipping, as recording is in place.'
 			elif isPlaying.startswith('1:0:0:0:0:0:0:0:0:0:'):
-				print('[Networkbrowser MountAgain] Skipping, as watching a movie file is in place.')
+				print '[Networkbrowser MountAgain] Skipping, as watching a movie file is in place.'
 		except:
 			pass
 		task = Components.Task.PythonTask(job, _("Adding schedule..."))
@@ -55,7 +54,7 @@ class MountAgainCheckPoller:
 		return job
 
 	def JobEpgCache(self):
-		print('[Networkbrowser MountAgain] mounting network shares.')
+		print '[Networkbrowser MountAgain] mounting network shares.'
 		iAutoMount.getAutoMountPoints()
 
 	def JobSched(self):
